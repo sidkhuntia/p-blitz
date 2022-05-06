@@ -1,6 +1,7 @@
 1. Siddhartha Khuntia
 2. Sibasish Mahanta
 3. Utkarsh Singh
+4. Suraj Kumar Kushwaha
 
 ## Table of Contents
 1. models   ---> that will contain the model of mongodb
