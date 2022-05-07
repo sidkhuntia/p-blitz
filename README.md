@@ -8,4 +8,4 @@
 2. public ---> will contain logic files and styles files
 3. routes ---> will contain all the routes/pages
 4. views ---> that will contain html files in **ejs** format
-5. server.js ---> will be the entry point of web app
+5. server.js ---> will be the entry point of web application
