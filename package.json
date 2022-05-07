@@ -20,10 +20,13 @@
   "homepage": "https://github.com/sidkhuntia/p-blitz#readme",
   "dependencies": {
     "body-parser": "^1.20.0",
+    "cookie-session": "^2.0.0",
     "ejs": "^3.1.7",
     "express": "^4.18.1",
     "express-ejs-layouts": "^2.5.1",
     "mongoose": "^6.3.2",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "passport": "^0.5.2",
+    "passport-google-oauth20": "^2.0.0"
   }
 }
