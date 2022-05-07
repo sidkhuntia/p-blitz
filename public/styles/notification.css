@@ -71,6 +71,9 @@
     margin-bottom: 5px;
     line-height: 1.2;
 }
+.text-muted{
+    color: #6c757d;
+}
 
 .notification-list .notification-list_feature-img img {
     height: 48px;
@@ -79,7 +82,7 @@
     margin-left: 20px;
 }
 
-.container {
+.notification-container {
     width: 100vw;
 }
 
@@ -115,9 +118,7 @@
 
 .btn-r {
     background-color: #A3A4A3;
-    color: #62605E;
-    /* margin-left: 50%; */
-    
+    color: #282623;    
 }
 
 .notification-time {
@@ -149,7 +150,7 @@ button:focus {
         font-size: 15.6px;
     }
 
-    .container {
+    .notification-container {
         width: 100vw;
     }
 
