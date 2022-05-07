@@ -3,7 +3,7 @@ const app = express();
 
 
 app.get("/", async (req, res) => {
-    res.render("login.ejs");
+    res.render("dashboard");
 });
 
 
