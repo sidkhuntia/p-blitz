@@ -3,7 +3,6 @@ const expressLayouts = require("express-ejs-layouts");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const cookieSession = require("cookie-session");
-const expressSession = require("express-session");
 require("./routes/auth");
 
 const app = express();
