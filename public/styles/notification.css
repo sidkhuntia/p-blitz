@@ -19,6 +19,8 @@
 .heading-line {
     position: relative;
     padding-bottom: 5px;
+    font-size: 1.8rem;
+    margin-left: 15%;
 }
 
 .heading-line:after {
@@ -48,7 +50,8 @@
     margin: auto;
     background: #fff;
     -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 3px 10px 4px rgba(0, 0, 0, 0.08);
+    border-radius: 0.4rem;
 }
 
 .notification-list .notification-list_content {
@@ -82,6 +85,10 @@
 
 .btn-container {
     margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 .button {
@@ -103,12 +110,14 @@
 .btn-a {
     background-color: #137B1F;
     color: #F8F8F8;
+
 }
 
 .btn-r {
     background-color: #A3A4A3;
     color: #62605E;
-    margin-left: 60px;
+    /* margin-left: 50%; */
+    
 }
 
 .notification-time {
@@ -137,7 +146,7 @@ button:focus {
     }
 
     .notification-list_detail {
-        font-size: 12px;
+        font-size: 15.6px;
     }
 
     .container {
@@ -169,5 +178,8 @@ button:focus {
         width: 36px;
         border-radius: 5px;
         margin-left: 12px;
+    }
+    .heading-line{
+        margin-left: 10%;
     }
 }
