@@ -65,8 +65,12 @@
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 1.5rem;
+    text-align: center;
 }
-
+.login-button a{
+   text-decoration: none;
+   color: white;
+}
 @media only screen and (max-width: 1024px){
     .login-background{
         width: 0;
