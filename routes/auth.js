@@ -1,8 +1,10 @@
 var express = require("express");
 const passport = require("passport");
+require("dotenv").config();
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 
 var app = express();
+console.log(process.env.GOOGLE_CLIENT_ID);
 
 app.get("/login", function (req, res, next) {
   res.render("login");
@@ -15,9 +17,8 @@ module.exports = app;
 passport.use(
   new GoogleStrategy(
     {
-      clientID:
-        "932567434616-7kh7fjg2fooedknmq10hlkv239pfkgkh.apps.googleusercontent.com",
-      clientSecret: "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",
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       callbackURL: "/oauth2/redirect/google",
       scope: ["profile"],
     },
