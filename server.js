@@ -27,6 +27,7 @@ const indexRouter = require("./routes/index");
 const authRouter = require("./routes/auth");
 const dashboardRouter = require("./routes/dashboard");
 const signupRouter = require("./routes/singup")
+const notificationRouter = require("./routes/notification")
 
 const isLoggedIn = (req, res, next) => {
   if (req.user) {
@@ -39,7 +40,7 @@ const isLoggedIn = (req, res, next) => {
 app.use("/", authRouter);
 app.use("/dashboard", isLoggedIn, dashboardRouter);
 app.use("/signup", signupRouter);
-
+app.use("/notification", notificationRouter);
 
 //check if user is logged in
 app.get("/", isLoggedIn, (req, res) => {
