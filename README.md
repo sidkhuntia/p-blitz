@@ -9,3 +9,21 @@
 3. routes ---> will contain all the routes/pages
 4. views ---> that will contain html files in **ejs** format
 5. server.js ---> will be the entry point of web app
+
+## Folder Structure
+```
+.
+├── models
+├── package.json
+├── public
+│   ├── scripts
+│   │   └── index.js
+│   └── styles
+│       └── main.css
+├── README.md
+├── routes
+│   └── index.js
+├── server.js
+└── views
+    └── home.ejs
+```
