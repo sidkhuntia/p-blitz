@@ -3,9 +3,13 @@ const expressLayouts = require("express-ejs-layouts");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const cookieSession = require("cookie-session");
+const mongoose = require("mongoose");
+const methodOverride = require("method-override");
+
 require("./routes/auth");
 
 const app = express();
+console.log(process.env.MONGODB_URL);
 
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
@@ -13,6 +17,14 @@ app.set("layout", "layouts/layout");
 app.use(expressLayouts);
 app.use("/public", express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false, limit: "10mb" }));
+app.use(methodOverride("_method"));
+
+mongoose.connect(process.env.MONGODB_URL, {
+  useNewUrlParser: true,
+});
+const db = mongoose.connection;
+db.on("error", (error) => console.error(error));
+db.once("open", () => console.log("Connected to MongoDB"));
 
 app.use(
   cookieSession({
