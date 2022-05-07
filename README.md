@@ -15,6 +15,7 @@
 .
 ├── models
 ├── package.json
+├── package-lock.json
 ├── public
 │   ├── scripts
 │   │   └── index.js
@@ -25,5 +26,10 @@
 │   └── index.js
 ├── server.js
 └── views
-    └── home.ejs
+    ├── index.ejs
+    ├── layouts
+    │   └── layout.ejs
+    └── partials
+        ├── footer.ejs
+        └── header.ejs
 ```
