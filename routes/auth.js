@@ -4,7 +4,6 @@ require("dotenv").config();
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 
 var app = express();
-console.log(process.env.GOOGLE_CLIENT_ID);
 
 app.get("/login", function (req, res, next) {
   res.render("login");
