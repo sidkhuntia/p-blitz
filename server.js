@@ -52,7 +52,6 @@ app.get("/", isLoggedIn, (req, res) => {
 });
 
 //if user is not logged in, redirect to login page
-
 app.get("/logout", (req, res) => {
   req.session = null;
   req.logout();
