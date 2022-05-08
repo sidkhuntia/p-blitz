@@ -12,29 +12,28 @@ app.get("/", async (req, res) => {
 });
 
 //function to calculate the creditscore
-function calculateCreditScore(income) {
-  let maxLoan = 100000;
-  let creditScore = 300 + Math.floor((1 / 4500) * maxLoan);
-
-  if (maxLoan > 100000) {
-    let x = Math.floor(maxLoan / 25000);
-    maxLoan = 25000 * x;
-  } else {
-    let x = Math.floor(maxLoan / 10000);
-    maxLoan = 10000 * x;
+function calculateCreditScore(income){
+  let maxLoan = 0.15*income*12*5
+  let creditScore = 300 + Math.floor(1/4500 * maxLoan)
+  
+  if(maxLoan > 100000){
+      let x = Math.ceil(maxLoan/25000)
+      maxLoan = 25000*x
+  }else{
+      maxLoan = 100000
   }
-
-  if (creditScore > 700) creditScore = 700;
-  if (maxLoan > 10000000) maxLoan = 10000000;
-
-  let cal = {
-    creditScore: creditScore,
-    maxLoan: 0,
-  };
-  if (creditScore >= 320) {
-    cal.maxLoan = maxLoan;
+  
+  if(creditScore > 700) creditScore = 700
+  if(maxLoan > 10000000) maxLoan = 10000000
+  
+  let result = {
+      creditScore: creditScore,
+      maxLoan: 0
   }
-  return cal;
+  if(creditScore >= 320){
+      result.maxLoan = maxLoan
+  }
+  return result
 }
 
 app.post("/", async (req, res) => {
