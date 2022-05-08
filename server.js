@@ -51,7 +51,7 @@ const isLoggedIn = (req, res, next) => {
 app.use("/", authRouter);
 app.use("/dashboard", isLoggedIn, dashboardRouter);
 app.use("/signup", signupRouter);
-app.use("/notification",isLoggedIn, notificationRouter);
+app.use("/notification", notificationRouter);
 
 //check if user is logged in
 app.get("/", isLoggedIn, (req, res) => {
