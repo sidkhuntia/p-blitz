@@ -2,6 +2,8 @@
 @import "login.css";
 @import "signup.css";
 @import "notification.css";
+@import "footer.css";
+
 *,
 *::before,
 *::after {
