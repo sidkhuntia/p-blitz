@@ -8,6 +8,8 @@ app.get("/", async (req, res) => {
     const loans = await Loan.find(searchOptions);
     res.render("dashboard", {
       loans: loans,
+      acceptButton: "Approve/Delete",
+      cancelButton: "Cancel",
     });
   } catch {
     res.redirect("/");

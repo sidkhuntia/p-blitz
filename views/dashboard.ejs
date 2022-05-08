@@ -2,8 +2,22 @@
 <br />
 <% loans.forEach(loan => { %>
 <div>
-    <%= loan.name %></div>
-    <%= loan.id %></div>
-    <%- include("./partials/deleteForm",{url:`/loanrequest/${loan.id}`}) %>
+    <%= loan.amount %>
+    <br>
+    <%= loan.interestRate %>
+    <br>
+    <%= loan.tenure %>
+    <br>
+    <%= loan.reason %>
+    <br>
+    <%= loan.createdAt %>
+    <br>
+    <%= loan.creatorGoogleID %>
+    <br>
+    <%- include("./partials/deleteForm",{url:`/loanrequest/${loan.id}`, buttonName: acceptButton}) %>
+    <%- include("./partials/deleteForm",{url:`/loanrequest/${loan.id}`, buttonName: cancelButton}) %>
+    <a href="/loanrequest/<%= loan.id  %>/edit"><button>Modify</button></a>
+    <br>
+
 </div>
 <% }) %>

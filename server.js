@@ -66,10 +66,10 @@ app.use("/signup", signupRouter);
 app.use("/notification", isLoggedIn, notificationRouter);
 app.use("/loanrequest", isLoggedIn, loanRequestRouter);
 
+let googleUser={};
 
 app.get("/", isLoggedIn, (req, res) => {
-  console.log(typeof (req.user))
-  // localStorage.setItem("user", JSON.stringify(req.user));
+  googleUser = req.user;
   res.render("index", { user: req.user.displayName });
   app.use("/", indexRouter);
 });
