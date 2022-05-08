@@ -26,6 +26,11 @@ const loanSchema = new mongoose.Schema({
     required: true,
     min: 0,
   },
+  creatorCibilScore:{
+    type: Number,
+    min:300,
+    max:700,
+  }
 });
 
 //create a delete method for the model
