@@ -25,6 +25,11 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  cibilScore:{
+    type: Number,
+    min:300,
+    max:700,
+  },
   bankName: {
     type: String,
     required: true,

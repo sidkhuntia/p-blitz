@@ -16,7 +16,7 @@ const loanSchema = new mongoose.Schema({
     required: true,
     min : 0,
   },
-  userID: {
+  createdBy : {
     type: mongoose.Schema.Types.ObjectId,
     // ref: "Author",
     required: true,
