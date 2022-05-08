@@ -37,8 +37,8 @@ app.use(passport.session());
 const indexRouter = require("./routes/index");
 const authRouter = require("./routes/auth");
 const dashboardRouter = require("./routes/dashboard");
-const signupRouter = require("./routes/singup")
-const notificationRouter = require("./routes/notification")
+const signupRouter = require("./routes/singup");
+const notificationRouter = require("./routes/notification");
 
 const isLoggedIn = (req, res, next) => {
   if (req.user) {
@@ -47,11 +47,23 @@ const isLoggedIn = (req, res, next) => {
     res.redirect("/login");
   }
 };
+
+const isLogged = (req, res, next) => {
+  if (req.user) {
+    next();
+  } else {
+    res.redirect("/login");
+  }
+};
+app.get("/login", isLogged, (req, res) => {
+  res.redirect("/dashboard");
+});
+
 // app.use("/", indexRouter);
 app.use("/", authRouter);
 app.use("/dashboard", isLoggedIn, dashboardRouter);
 app.use("/signup", signupRouter);
-app.use("/notification",isLoggedIn, notificationRouter);
+app.use("/notification", isLoggedIn, notificationRouter);
 
 //check if user is logged in
 app.get("/", isLoggedIn, (req, res) => {
