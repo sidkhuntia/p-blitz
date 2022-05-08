@@ -1,11 +1,28 @@
-<header>
-    <nav class="header-nav">
-        <a class="header-title" href="/">p-blitz</a>
-        <ul>
-            <li><a href="/dashboard">Home</a></li>
-            <li><a href="/loan">Loan</a></li>
-            <li><a href="/notification">Notifications</a></li>
-            <li><a href="/profile">Profile</a></li>
-        </ul>
-    </nav>
-</header>
+<header class="header-site-header">
+    <div class="header-wrapper header-site-header__wrapper">
+      <div class="header-site-header__start">
+        <a href="#" class="header-brand">p-blitz</a>
+      </div>
+      <div class="header-site-header__end">
+        <nav class="header-nav">
+          <div class="header-nav__toggle">
+            <img src="/public/images/menu.svg" alt="menu">
+          </div>
+          <ul class="header-nav__wrapper">
+            <li class="header-nav__item"><a href="/dashboard">Home</a></li>
+            <li class="header-nav__item"><a href="/loan">Loan</a></li>
+            <li class="header-nav__item"><a href="/notification">Notifications</a></li>
+          </ul>
+        </nav>
+        <div class="header-profile">
+          <div class="header-profile-picture header-dropbtn" onclick="header_myFunction()">
+          </div>
+          <div class="header-dropdown-content" id="myDropdown">
+            <a href="#"class="header-view-profile">View profile</a>
+            <a href="/logout"class="header-logout">Log out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <script src="/public/scripts/header.js"></script>
