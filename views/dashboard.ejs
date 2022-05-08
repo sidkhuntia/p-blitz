@@ -1,1 +1,9 @@
 <h2>Dashboard</h2>
+<br />
+<% loans.forEach(loan => { %>
+<div>
+    <%= loan.name %></div>
+    <%= loan.id %></div>
+    <%- include("./partials/deleteForm",{url:`/loanrequest/${loan.id}`}) %>
+</div>
+<% }) %>

@@ -39,6 +39,7 @@ const authRouter = require("./routes/auth");
 const dashboardRouter = require("./routes/dashboard");
 const signupRouter = require("./routes/singup");
 const notificationRouter = require("./routes/notification");
+const loanRequestRouter = require("./routes/loanrequest");
 
 const isLoggedIn = (req, res, next) => {
   if (req.user) {
@@ -50,7 +51,6 @@ const isLoggedIn = (req, res, next) => {
 
 const isLogged = (req, res, next) => {
   if (req.user) {
-    // res.redirect("/dashboard");
     next();
   } else {
     res.render("login");
@@ -60,18 +60,17 @@ app.get("/login", isLogged, (req, res) => {
   res.redirect("/dashboard");
 });
 
-// app.use("/", indexRouter);
 app.use("/", authRouter);
 app.use("/dashboard", isLoggedIn, dashboardRouter);
 app.use("/signup", signupRouter);
 app.use("/notification", isLoggedIn, notificationRouter);
+app.use("/loanrequest", isLoggedIn, loanRequestRouter);
 
-//check if user is logged in
+
 app.get("/", isLoggedIn, (req, res) => {
-  // console.log(req.user);
-  // res.send(`Welcome ${req.user.displayName}`);
+  console.log(typeof (req.user))
+  // localStorage.setItem("user", JSON.stringify(req.user));
   res.render("index", { user: req.user.displayName });
-
   app.use("/", indexRouter);
 });
 
@@ -86,3 +85,6 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Listening on port ${port}.....`);
 });
+
+
+// console.log(localStorage.getItem("user"));
