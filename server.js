@@ -48,16 +48,17 @@ const isLoggedIn = (req, res, next) => {
   }
 };
 
-// const isLogged = (req, res, next) => {
-//   if (req.user) {
-//     next();
-//   } else {
-//     res.redirect("/login");
-//   }
-// };
-// app.get("/login", isLogged, (req, res) => {
-//   res.redirect("/dashboard");
-// });
+const isLogged = (req, res, next) => {
+  if (req.user) {
+    // res.redirect("/dashboard");
+    next();
+  } else {
+    res.render("login");
+  }
+};
+app.get("/login", isLogged, (req, res) => {
+  res.redirect("/dashboard");
+});
 
 // app.use("/", indexRouter);
 app.use("/", authRouter);

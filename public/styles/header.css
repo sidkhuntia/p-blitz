@@ -78,9 +78,9 @@
 
 .header-site-header {
     display: block;
-    background-color: #010919;
+    background-color: #1c1f2f;
     color: white;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Poppins', sans-serif;
     z-index: 1;
     position: relative;
     top: 0;
@@ -148,7 +148,7 @@
 }
 
 .header-nav__item {
-    background-color: #010919;
+    background-color: #1c1f2f;
     list-style: none
 }
 
