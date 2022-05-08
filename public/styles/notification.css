@@ -45,9 +45,10 @@
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 2%;
-    margin-bottom: 7px;
-    max-width: 600px;
     margin: auto;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    max-width: 600px;
     background: #fff;
     -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
     box-shadow: 0 3px 10px 4px rgba(0, 0, 0, 0.08);
