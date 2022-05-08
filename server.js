@@ -9,7 +9,6 @@ const methodOverride = require("method-override");
 require("./routes/auth");
 
 const app = express();
-console.log(process.env.MONGODB_URL);
 
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
