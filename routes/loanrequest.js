@@ -39,7 +39,6 @@ app.post("/", async (req, res) => {
     tenure: req.body.tenure,
     interestRate: req.body.interestRate,
     reason: req.body.reason,
-    creatorGoogleID: user.id,
   });
   try {
     const newLoan = await loan.save();
@@ -87,7 +86,6 @@ app.put("/:id", async (req, res) => {
       (loan.tenure = req.body.tenure),
       (loan.interestRate = req.body.interestRate),
       (loan.reason = req.body.reason),
-      (loan.creatorGoogleID = user.id);
     await loan.save();
     res.redirect("/dashboard");
   } catch {

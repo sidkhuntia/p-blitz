@@ -13,10 +13,10 @@
     <%= loan.createdAt %>
     <br>
     <%= loan.creatorGoogleID %>
-    <br>
     <%- include("./partials/deleteForm",{url:`/loanrequest/${loan.id}`, buttonName: acceptButton}) %>
     <%- include("./partials/deleteForm",{url:`/loanrequest/${loan.id}`, buttonName: cancelButton}) %>
     <a href="/loanrequest/<%= loan.id  %>/edit"><button>Modify</button></a>
+    <br>
     <br>
 
 </div>
