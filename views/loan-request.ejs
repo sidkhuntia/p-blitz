@@ -1,0 +1,94 @@
+<div class="form-bg">
+    <form class="loan-form">
+      <div class="loan-two-column">
+        <div class="loan-left">
+          <input id="loan-amount" type="text" required />
+          <label for="loan-amount" alt="Loan amount (in Rs.)" placeholder="Loan amount (in Rs.)"></label>
+          <input id="loan-tenure" type="text" required />
+          <label for="loan-tenure" alt="Tenure (in months)" placeholder="Tenure (in months)"></label>
+        </div>
+        <div class="loan-right">
+          <input id="loan-credit-score" type="text" disabled />
+          <label for="loan-credit-score" alt="Credit scrore" placeholder="Credit scrore"></label>
+          <input id="loan-credit-score" type="text" disabled />
+          <label for="loan-credit-score" alt="Credit scrore" placeholder="Credit scrore"></label>
+        </div>
+      </div>
+      <input type="submit">
+    </form>
+  </div>
+  <style>
+    input[type="text"] {
+      box-sizing: border-box;
+      width: 100%;
+      height: calc(3em + 2px);
+      margin: 0 0 1em;
+      padding: 6px;
+      border: 1px solid #bababa;
+      border-radius: 3px;
+      background: #fff;
+      font-size: 16px;
+      resize: none;
+      outline: none;
+    }
+
+    input[type="text"]:focus {
+      border-color: #00bafa;
+    }
+
+    input[type="text"]:focus+label[placeholder]:before {
+      color: #0091da;
+    }
+
+    input[type="text"]:focus+label[placeholder]:before,
+    input[type="text"]:valid+label[placeholder]:before {
+      transition-duration: .2s;
+      transform: translate(0, -1.6em) scale(0.9, 0.9);
+      font-weight: bold;
+    }
+
+    input[type="text"]:valid {
+      border-color: green;
+    }
+
+    input[type="text"]:valid+label[placeholder]:before {
+      color: green;
+    }
+
+    input[type="text"]:invalid+label[placeholder][alt]:before {
+      content: attr(alt);
+    }
+
+    input[type="text"]+label[placeholder] {
+      display: block;
+      pointer-events: none;
+      line-height: 1.25em;
+      margin-top: calc(-3em - 2px);
+      margin-bottom: calc((3em - 1em) + 2px);
+    }
+
+    input[type="text"]+label[placeholder]:before {
+      content: attr(placeholder);
+      display: inline-block;
+      margin: 0 calc(0.5em + 2px);
+      padding: 0 2px;
+      color: #7d7d7d;
+      white-space: nowrap;
+      transition: 0.3s ease-in-out;
+      background-image: linear-gradient(to bottom, #ffffff, #ffffff);
+      background-size: 100% 5px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+
+    html {
+      height: 100%;
+      font-size: 16px;
+    }
+
+    body>* {
+      margin: 20px auto;
+      width: 50%;
+    }
+  </style>
