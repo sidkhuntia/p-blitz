@@ -173,6 +173,10 @@
     display: flex;
 }
 
+.header-profile:hover {
+    cursor: pointer;
+}
+
 .header-profile-picture {
     appearance: none;
     order: 1;
