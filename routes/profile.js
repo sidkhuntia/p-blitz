@@ -29,21 +29,42 @@ function calculateCreditScore(income) {
 }
 
 app.get("/", async (req, res) => {
-  console.log(googleUser.user);
-  res.render("profile/new");
+  // console.log(googleUser.user);
+  let searchOptions = {};
+  try {
+    const profiles = await Profile.find(searchOptions);
+    res.render("profile/new", {
+      profile: profiles,
+    });
+  } catch {
+    res.redirect("/");
+  }
 });
 
 app.post("/", async (req, res) => {
   const profile = new Profile({
     name: req.body.name,
-    
+    userGoogleID: googleUser.user.id,
+    mobileNumber: req.body.mobileNumber,
+    age: req.body.age,
+    gender: req.body.gender,
+    bankName: req.body.bankName,
+    bankBranchName: req.body.bankBranchName,
+    bankBranchIFSC: req.body.bankBranchIFSC,
+    bankAccountNumber: req.body.bankAccountNumber,
+    bankAccountholderName: req.body.bankAccountholderName,
+    aadharNumber: req.body.aadharNumber,
+    panCardNumber: req.body.panCardNumber,
+    CTC: req.body.CTC,
+    monthlySalary: req.body.monthlySalary,
+    cibilScore: calculateCreditScore(req.body.monthlySalary).creditScore,
   });
   try {
-    const newLoan = await loan.save();
+    const newProfile = await profile.save();
     res.redirect("/dashboard");
   } catch (error) {
     res.render("profile/new.ejs", {
-      errorMessage: "Error creating Loan",
+      errorMessage: "Error creating Profile",
     });
   }
 });
