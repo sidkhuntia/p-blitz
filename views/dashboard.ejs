@@ -1,23 +1,50 @@
-<h2>Dashboard</h2>
-<br />
-<% loans.forEach(loan => { %>
-<div>
-    <%= loan.amount %>
-    <br>
-    <%= loan.interestRate %>
-    <br>
-    <%= loan.tenure %>
-    <br>
-    <%= loan.reason %>
-    <br>
-    <%= loan.createdAt %>
-    <br>
-    <%= loan.creatorGoogleID %>
-    <%- include("./partials/deleteForm",{url:`/loanrequest/${loan.id}`, buttonName: acceptButton}) %>
-    <%- include("./partials/deleteForm",{url:`/loanrequest/${loan.id}`, buttonName: cancelButton}) %>
-    <a href="/loanrequest/<%= loan.id  %>/edit"><button>Modify</button></a>
-    <br>
-    <br>
-
-</div>
-<% }) %>
+<section class="dashboad-section-50">
+    <div class="dashboad-container">
+      <h3 class="dashboad-m-b-50 heading-line">Dashboad </h3>
+      <div class="dashboad-ui_dd-content">
+        <div class="dashboad-list">
+          <div class="dashboad-container">
+            <div class="dashboad-list_content">
+              <div class="dashboad-list_img">
+                <img src="/public/images/logo.png" alt="user">
+              </div>
+              <div class="dashboad-list_detail">
+                <p><b>Suraj Kumar</b> <span class="dashboad-text-muted">has an offer</span> </p>
+              </div>
+              <p class="dashboad-time">10 mins ago</p>
+            </div>
+            <div class="dashboad-two-column" id="">
+              <div class="dashboad-left">
+                <div class="dashboad-loan-info">
+                  <b>Loan amount:</b>
+                  1000000
+                </div>
+                <div class="dashboad-loan-info">
+                  <b>Tenure:</b>
+                  1000000
+                </div>
+              </div>
+              <div class="dashboad-right">
+                <div class="dashboad-loan-info">
+                  <b>Credit scrore:</b>
+                  1000000
+                </div>
+                <div class="dashboad-loan-info">
+                  <b>Interest rate:</b>
+                  1000000
+                </div>
+              </div>
+            </div>
+            <div class="dashboad-loan-reason">
+              <b> Reason:</b>
+            </div>
+            <div class="dashboad-btn-container">
+              <button class="dashboad-button dashboad-btn-a">Accept</button>
+              <button class="dashboad-button dashboad-btn-n">Negotiate</button>
+              <button class="dashboad-button dashboad-btn-r">Reject</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
