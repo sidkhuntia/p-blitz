@@ -82,7 +82,7 @@
     color: white;
     font-family: 'Poppins', sans-serif;
     z-index: 1;
-    position: relative;
+    position: fixed;
     top: 0;
     width: 100%;
 }

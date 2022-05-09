@@ -12,17 +12,6 @@
     position: relative;
 }
 
-.dashboard-m-b-50 {
-    margin-bottom: 50px;
-}
-
-.heading-line {
-    position: relative;
-    padding-bottom: 5px;
-    font-size: 1.8rem;
-    margin-left: 15%;
-}
-
 .heading-line:after {
     content: "";
     height: 4px;
