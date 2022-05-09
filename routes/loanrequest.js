@@ -83,7 +83,7 @@ app.put("/:id", async (req, res) => {
     creatorCibilScore: loan.creatorCibilScore,
     creatorName: loan.creatorName,
     negotiatorGoogleID: googleUser.user.id.toString(),
-    negotiator: negotiator,
+    negotiator: negotiator.name,
     modifiedAt: Date.now(),
   });
   try {

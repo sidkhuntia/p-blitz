@@ -2,7 +2,7 @@
     <div class="notification-container">
         <h3 class="m-b-50 heading-line">Notifications   <i class="fa fa-bell"></i></h3>
         <div class="notification-ui_dd-content">
-        <% loans.forEach(loan => { %>
+        <% negotiateLoans.forEach(loan => { %>
             <div class="notification-list">
                 <div class="notification-container">
                     <div class="notification-list_content">
@@ -10,9 +10,9 @@
                             <img src="/public/images/logo.png" alt="user">
                         </div>
                         <div class="notification-list_detail">
-                            <p><b>Suraj Kumar</b> <span class="text-muted">has an offer</span> </p>
-                            <p class="">Offered tenure: <%= loan.tenure %> 
-                                </br> Offered interest: <%= loan.interestRate %>
+                            <p><b><%= loan.negotiator %> </b> <span class="text-muted">has an offer</span> </p>
+                            <p class="">Offered tenure: <%= loan.tenure %> yrs
+                                </br> Offered interest: <%= loan.interestRate %>%
                             </p>
                         </div>
                         <!-- <p class="notification-time">10 mins ago</p> -->

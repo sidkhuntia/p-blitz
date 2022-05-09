@@ -1,17 +1,13 @@
 <div class="loan-form-bg">
-  <div class="m-b-50 heading-line">Apply for Loan</div>
+  <h3 class="m-b-50 heading-line" style="margin-top: 3rem">
+    Negotiate Loan <i class="fa-solid fa-money-check-dollar"></i>
+  </h3>
   <div class="loan-form-container">
-    <form
-      class="loan-form"
-      action="/loanrequest/<%= loan.id %>?_method=PUT "
-      method="post"
-    >
+    <form class="loan-form" action="/loanrequest/<%= loan.id %>?_method=PUT" method="post">
       <%- include('_form_fields.ejs') %>
       <div class="loan-button-area">
-        <button type="submit" class="loan-button loan-btn-a">Apply</button>
-        <a href="/" >
-          <button class="loan-button loan-btn-r">Cancel</button>
-        </a>
+        <button type="submit" class="loan-button loan-btn-a">Negotiate</button>
+        <button class="loan-button loan-btn-r">Cancel</button>
       </div>
     </form>
   </div>

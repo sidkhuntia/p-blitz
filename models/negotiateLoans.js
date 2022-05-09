@@ -33,7 +33,7 @@ const negotiateLoanSchema = new mongoose.Schema({
     type: String,
   },
   negotiator: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: String,
   },
   modifiedAt: {
     type: Number,
