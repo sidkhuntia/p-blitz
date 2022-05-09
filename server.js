@@ -40,6 +40,7 @@ const dashboardRouter = require("./routes/dashboard");
 const signupRouter = require("./routes/singup");
 const notificationRouter = require("./routes/notification");
 const loanRequestRouter = require("./routes/loanrequest");
+const profileRouter = require("./routes/profile");
 
 const isLoggedIn = (req, res, next) => {
   if (req.user) {
@@ -65,6 +66,7 @@ app.use("/dashboard", isLoggedIn, dashboardRouter);
 app.use("/signup", signupRouter);
 app.use("/notification", isLoggedIn, notificationRouter);
 app.use("/loanrequest", isLoggedIn, loanRequestRouter);
+// app.use("/profile", isLoggedIn, profileRouter);
 
 let googleUser={};
 
