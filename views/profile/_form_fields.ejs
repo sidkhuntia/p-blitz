@@ -7,8 +7,8 @@
   <input type="file" id="profile-preview" hidden>
 
   <input type="text" name="name" placeholder="Full Name" class="form-card-input" required>
-  <input type="number" name="age" placeholder="Age" class="form-card-input" required>
-  <input type="text" placeholder="Mobile" class="form-card-input" required>
+  <input type="number" onkeypress="return isNumberKey(event)" name="age" placeholder="Age" class="form-card-input" required>
+  <input type="number" onkeypress="return isNumberKey(event)" placeholder="Mobile" class="form-card-input" required>
   <input type="text" placeholder="Gender" class="form-card-input" required>
   <div class="form-btn-box">
       <button type="button" id="form-next1">Next</button>
@@ -18,7 +18,7 @@
   <h3 class="form-card-heading">BANK DETAILS</h3>
   <input type="text" name="" placeholder="Bank Name" class="form-card-input" required>
   <input type="text" name="" placeholder="Account Holder Name" class="form-card-input" required>
-  <input type="text" name="" placeholder="Account Number" class="form-card-input" required>
+  <input type="number" name="" onkeypress="return isNumberKey(event)" placeholder="Account Number" class="form-card-input" required>
   <input type="text" name="" placeholder="Branch Name" class="form-card-input" required>
   <input type="text" name="" placeholder="IFSC Code" class="form-card-input" required>
 
@@ -29,7 +29,7 @@
 </form>
 <form action="" id="form3">
   <h3 class="form-card-heading">UPLOAD DOCUMENTS</h3>
-  <input type="text" name="" placeholder="Aadhar Card Number" class="form-card-input" required>
+  <input type="number" name="" onkeypress="return isNumberKey(event)" placeholder="Aadhar Card Number" class="form-card-input" required>
   <input type="file" id="aadhar" required hidden>
   <label for="aadhar" class="profile-label-btn">Choose file</label>
 
@@ -37,11 +37,11 @@
   <input type="file" id="pan" required hidden>
   <label for="pan" class="profile-label-btn">Choose file</label>
 
-  <input type="text" name="" placeholder="Monthly Income" class="form-card-input" required>
+  <input type="number" onkeypress="return isNumberKey(event)" name="" placeholder="Monthly Income" class="form-card-input" required>
   <input type="file" id="income"  required hidden>
   <label for="income" class="profile-label-btn">Choose file</label>
 
-  <input type="text" name="" placeholder="CTC" class="form-card-input" required>
+  <input type="number" onkeypress="return isNumberKey(event)" name="" placeholder="CTC" class="form-card-input" required>
 
   <div class="form-btn-box">
       <button type="button" id="form-back2">Back</button>
