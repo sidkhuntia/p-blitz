@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const Profile = require("../models/profile");
 var googleUser = require("../server");
 console.log(googleUser.user);
 
@@ -30,6 +31,21 @@ function calculateCreditScore(income) {
 app.get("/", async (req, res) => {
   console.log(googleUser.user);
   res.render("profile/new");
+});
+
+app.post("/", async (req, res) => {
+  const profile = new Profile({
+    name: req.body.name,
+    
+  });
+  try {
+    const newLoan = await loan.save();
+    res.redirect("/dashboard");
+  } catch (error) {
+    res.render("profile/new.ejs", {
+      errorMessage: "Error creating Loan",
+    });
+  }
 });
 
 module.exports = app;

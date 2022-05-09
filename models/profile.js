@@ -6,6 +6,9 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  userGoogleID:{
+    type: String,
+  },
   mobileNumber: {
     type: Number,
     required: true,
