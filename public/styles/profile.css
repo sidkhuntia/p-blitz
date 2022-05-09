@@ -3,7 +3,7 @@
 .card-container {
     width: 360px;
     height: 600px;
-    margin: 8% auto;
+    margin: 4% auto;
     background: #fff;
     border-radius: 5px;
     position: relative;
@@ -135,5 +135,5 @@ input:focus {
     padding-left: 0px;
     margin-bottom: 10px;
     width: 110px;
-    height: 20px;
+    height: 24px;
 }
