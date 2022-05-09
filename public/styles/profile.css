@@ -1,9 +1,7 @@
-
-
 .card-container {
     width: 360px;
     height: 600px;
-    margin: 8% auto;
+    margin: 4% auto;
     background: #fff;
     border-radius: 5px;
     position: relative;
@@ -17,7 +15,7 @@
     color: #777;
 }
 
-.card-container form {
+.card-container .profile-form-div {
     width: 280px;
     position: absolute;
     top: 100px;
@@ -118,8 +116,8 @@
     color: #777;
     border-radius: 5px;
     display: inline-block;
-    width: 75px;
-    height: 20px;
+    width: 90px;
+    height: 24px;
     padding-left: 10px;
     margin-bottom: 15px;
     font-size: 13px;
@@ -135,5 +133,5 @@ input:focus {
     padding-left: 0px;
     margin-bottom: 10px;
     width: 110px;
-    height: 20px;
+    height: 24px;
 }
