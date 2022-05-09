@@ -1,52 +1,80 @@
 <section class="dashboard-section-50">
-    <div class="dashboard-container">
-      <h3 class="m-b-50 heading-line">Dashboard <i class="fa-solid fa-house"></i></h3>
-      <div class="dashboard-ui_dd-content">
-        <% loans.forEach(loan =>{ %>
-        <div class="dashboard-list">
-          <div class="dashboard-container">
-            <div class="dashboard-list_content">
-              <div class="dashboard-list_img">
-                <img src="/public/images/logo.png" alt="user">
-              </div>
-              <div class="dashboard-list_detail">
-                <p><b>Suraj Kumar</b> <span class="dashboard-text-muted">has an offer</span> </p>
-              </div>
-              <p class="dashboard-time">10m ago</p>
+  <div class="dashboard-container">
+    <h3 class="m-b-50 heading-line">
+      Dashboard <i class="fa-solid fa-house"></i>
+    </h3>
+    <div class="dashboard-ui_dd-content">
+      <% loans.forEach(loan =>{ %>
+      <div class="dashboard-list">
+        <div class="dashboard-container">
+          <div class="dashboard-list_content">
+            <div class="dashboard-list_img">
+              <img src="/public/images/logo.png" alt="user" />
             </div>
-            <div class="dashboard-two-column" id="">
-              <div class="dashboard-left">
-                <div class="dashboard-loan-info">
-                  <b>Loan amount:</b>
-                  ₹ <%= loan.amount %>
-                </div>
-                <div class="dashboard-loan-info">
-                  <b>Tenure:</b>
-                  <%= loan.tenure %> yrs
-                </div>
+            <div class="dashboard-list_detail">
+              <p>
+                <b><%= loan.creatorName %> </b>
+                <span class="dashboard-text-muted">has an offer</span>
+              </p>
+            </div>
+            <p class="dashboard-time">
+              <%- showTime.format(loan.createdAt,'mini') + " ago" %>
+            </p>
+          </div>
+          <div class="dashboard-two-column" id="">
+            <div class="dashboard-left">
+              <div class="dashboard-loan-info">
+                <b>Loan amount:</b>
+                ₹ <%= loan.amount %>
               </div>
-              <div class="dashboard-right">
-                <div class="dashboard-loan-info">
-                  <b>Credit scrore:</b>
-                  1000000
-                </div>
-                <div class="dashboard-loan-info">
-                  <b>Interest rate:</b>
-                  <%= loan.interestRate %>
-                </div>
+              <div class="dashboard-loan-info">
+                <b>Tenure:</b>
+                <%= loan.tenure %> yrs
               </div>
             </div>
-            <div class="dashboard-loan-reason">
-              <b> Reason:</b>
-            </div>
-            <div class="dashboard-btn-container">
-              <button class="dashboard-button dashboard-btn-a">Accept</button>
-              <button class="dashboard-button dashboard-btn-n">Negotiate</button>
-              <button class="dashboard-button dashboard-btn-r">Reject</button>
+            <div class="dashboard-right">
+              <div class="dashboard-loan-info">
+                <b>Credit scrore:</b>
+                <%= loan.creatorCibilScore %>
+              </div>
+              <div class="dashboard-loan-info">
+                <b>Interest rate:</b>
+                <%= loan.interestRate %>
+              </div>
             </div>
           </div>
+          <div class="dashboard-loan-reason">
+            <b> Reason:</b>
+            <%= loan.reason %>
+          </div>
+          <div class="dashboard-btn-container">
+            <form
+              action="/loanrequest/<%= loan.id %>?_method=DELETE"
+              method="POST"
+            >
+              <button class="dashboard-button dashboard-btn-a" type="submit">
+                <%= acceptButton %>
+              </button>
+            </form>
+            <a href="/loanrequest/<%= loan.id  %>/edit">
+              <button
+                class="dashboard-button dashboard-btn-n"
+              >
+                Negotiate
+              </button>
+            </a>
+            <form
+              action="/loanrequest/<%= loan.id %>?_method=DELETE"
+              method="POST"
+            >
+              <button class="dashboard-button dashboard-btn-r" type="submit">
+                <%= rejectButton %>
+              </button>
+            </form>
+          </div>
         </div>
-        <%})%>
       </div>
+      <%})%>
     </div>
-  </section>
+  </div>
+</section>

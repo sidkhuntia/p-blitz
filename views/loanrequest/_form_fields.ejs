@@ -1,17 +1,64 @@
-<form class="loan-form">
-  <div class="loan-two-column" id="">
-    <div class="loan-left">
-      <input id="loan-amount" type="text" name="amount" value="<%= loan.amount %>" required onkeypress="return isNumberKey(event)"/>
-      <label for="loan-amount" alt="Loan amount (in Rs.)" placeholder="Loan amount (in Rs.)"></label>
-      <input id="loan-tenure" type="text" name="tenure" value="<%= loan.tenure %>" required onkeypress="return isNumberKey(event)"/>
-      <label for="loan-tenure" alt="Tenure (in months)" placeholder="Tenure (in months)"></label>
-    </div>
-    <div class="loan-right">
-      <input id="loan-credit-score" type="text" disabled class="loan-diabled-input" />
-      <label for="loan-credit-score" alt="Credit scrore" placeholder="Credit scrore"></label>
-      <input id="loan-interest-rate" type="text" name="interestRate" value="<%= loan.interestRate %>" required onkeypress="return isNumberKey(event)"/>
-      <label for="loan-interest-rate" alt="Interest Rate (in % per Year)"
-        placeholder="Interest Rate (in % per Year)"></label>
-    </div>
+<div class="loan-two-column" id="">
+  <div class="loan-left">
+    <input
+      id="loan-amount"
+      type="text"
+      name="amount"
+      value="<%= loan.amount %>"
+      required
+      onkeypress="return isNumberKey(event)"
+    />
+    <label
+      for="loan-amount"
+      alt="Loan amount (in Rs.)"
+      placeholder="Loan amount (in Rs.)"
+    ></label>
+    <input
+      id="loan-tenure"
+      type="text"
+      name="tenure"
+      value="<%= loan.tenure %>"
+      required
+      onkeypress="return isNumberKey(event)"
+    />
+    <label
+      for="loan-tenure"
+      alt="Tenure (in months)"
+      placeholder="Tenure (in months)"
+    ></label>
   </div>
-  <textarea name="reason" placeholder=" Reason (not required)" form="" class="loan-reason" maxlength="100"></textarea>
+  <div class="loan-right">
+    <input
+      id="loan-credit-score"
+      type="text"
+      disabled
+      class="loan-diabled-input"
+    />
+    <label
+      for="loan-credit-score"
+      alt="Credit scrore"
+      placeholder="Credit scrore"
+    ></label>
+    <input
+      id="loan-interest-rate"
+      type="text"
+      name="interestRate"
+      value="<%= loan.interestRate %>"
+      required
+      onkeypress="return isNumberKey(event)"
+    />
+    <label
+      for="loan-interest-rate"
+      alt="Interest Rate (in % per Year)"
+      placeholder="Interest Rate (in % per Year)"
+    ></label>
+  </div>
+</div>
+<textarea
+  name="reason"
+  placeholder=" Reason (not required)"
+  class="loan-reason"
+  maxlength="100"
+>
+  <%= loan.reason %>
+</textarea>

@@ -1,8 +1,15 @@
 const express = require("express");
 const app = express();
 const Loan = require("../models/loan");
+const Profile = require("../models/profile");
+const NegotiateLoan = require("../models/negotiateLoans");
 const user = require("../server.js");
-var googleUser = require("../server")
+var googleUser = require("../server");
+
+const TimeAgo = require("javascript-time-ago");
+const en = require("javascript-time-ago/locale/en");
+TimeAgo.addDefaultLocale(en);
+const timeAgo = new TimeAgo("en-US");
 
 //author home page
 app.get("/", async (req, res) => {
@@ -11,21 +18,25 @@ app.get("/", async (req, res) => {
 });
 
 app.post("/", async (req, res) => {
+  const creator = await Profile.findOne({
+    userGoogleID: googleUser.user.id.toString(),
+  });
   const loan = new Loan({
     amount: req.body.amount,
+    createdAt: Date.now(),
     tenure: req.body.tenure,
     interestRate: req.body.interestRate,
     reason: req.body.reason,
-    creatorGoogleID : googleUser.user.id,
-
+    creatorGoogleID: googleUser.user.id.toString(),
+    creatorCibilScore: creator.cibilScore,
+    creatorName: creator.name,
   });
   try {
     const newLoan = await loan.save();
     res.redirect("/dashboard");
   } catch (error) {
-    res.render("loanrequest/new.ejs", {
-      errorMessage: "Error creating Loan",
-    });
+    renderNewPage(res, loan, true);
+    console.log(error);
   }
 });
 
@@ -58,18 +69,29 @@ app.get("/:id/edit", async (req, res) => {
 });
 
 app.put("/:id", async (req, res) => {
-  let loan;
+  const negotiator = await Profile.findOne({
+    userGoogleID: googleUser.user.id.toString(),
+  });
+  const loan = await Loan.findById(req.params.id);
+  const negotiateLoans = new NegotiateLoan({
+    amount: req.body.amount,
+    createdAt: Date.now(),
+    tenure: req.body.tenure,
+    interestRate: req.body.interestRate,
+    reason: req.body.reason,
+    creatorGoogleID: loan.creatorGoogleID,
+    creatorCibilScore: loan.creatorCibilScore,
+    creatorName: loan.creatorName,
+    negotiatorGoogleID: googleUser.user.id.toString(),
+    negotiator: negotiator,
+    modifiedAt: Date.now(),
+  });
   try {
-    loan = await Loan.findById(req.params.id);
-    (loan.amount = req.body.amount),
-      (loan.tenure = req.body.tenure),
-      (loan.interestRate = req.body.interestRate),
-      (loan.reason = req.body.reason),
-    await loan.save();
+    await negotiateLoans.save();
     res.redirect("/dashboard");
   } catch {
-    if (loan != null) {
-      renderPage(res, loan, "edit", true);
+    if (negotiateLoans != null) {
+      renderPage(res, negotiateLoans, "edit", true);
     } else {
       res.redirect("/dashboard");
     }
@@ -84,6 +106,7 @@ async function renderPage(res, loan, form, errors = false) {
   try {
     const params = {
       loan: loan,
+      showTime: timeAgo,
     };
     if (errors) {
       if (form === "edit") {

@@ -2,9 +2,14 @@ const mongoose = require("mongoose");
 
 const loanSchema = new mongoose.Schema({
   amount: {
-    type: String,
+    type: Number,
     required: true,
   },
+  createdAt: {
+    type: Number,
+    default: Date.now(),
+  },
+
   tenure: {
     type: Number,
     required: true,
@@ -13,15 +18,16 @@ const loanSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-    required: true,
-  },
   reason: {
     type: String,
   },
   creatorGoogleID: {
+    type: String,
+  },
+  creatorCibilScore: {
+    type: Number,
+  },
+  creatorName: {
     type: String,
   },
 });
