@@ -222,25 +222,7 @@
     .dashboard-list_detail p{
         font-size: 1.2rem;
     }
-}
 
-.dashboard-two-column {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 85%;
-    margin-left: 10%;
-}
-
-.dashboard-left {
-    width: 50%;
-}
-
-.dashboard-right {
-    width: 50%;
-}
-
-@media only screen and (max-width: 799px) {
     .dashboard-two-column {
         display: block;
         width: 80%;
@@ -263,4 +245,21 @@
         padding: 0.5rem;
     }
 }
+
+.dashboard-two-column {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 85%;
+    margin-left: 10%;
+}
+
+.dashboard-left {
+    width: 50%;
+}
+
+.dashboard-right {
+    width: 50%;
+}
+
 
