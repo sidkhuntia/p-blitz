@@ -30,7 +30,14 @@ function calculateCreditScore(income) {
 
 app.get("/", async (req, res) => {
   // console.log(googleUser.user);
-  renderNewPage(res, new Profile());
+  const profile = await Profile.findOne({
+    creatorGoogleID: googleUser.user.id,
+  });
+  if(profile) {
+    renderNewPage(res,profile);
+  } else {
+    renderNewPage(res, new Profile());
+  }
 
 });
 
@@ -64,14 +71,15 @@ app.post("/", async (req, res) => {
 });
 
 
-async function renderNewPage(res, loan, errors = false) {
-  renderPage(res, loan, "new", errors);
+async function renderNewPage(res, profile, errors = false) {
+  renderPage(res, profile, "new", errors);
 }
 
-async function renderPage(res, loan, form, errors = false) {
+async function renderPage(res, profile, form, errors = false) {
   try {
     const params = {
-      loan: loan,
+      profile: profile,
+      googleUser:  googleUser,
     };
     if (errors) {
       if (form === "edit") {
@@ -80,7 +88,7 @@ async function renderPage(res, loan, form, errors = false) {
         params.errorMessage = "Error creating loanrequest";
       }
     }
-    res.render(`loanrequest/${form}`, params);
+    res.render(`profile/${form}`, params);
   } catch {
     if (loan != null) {
       renderPage(res, loan, "edit", true);

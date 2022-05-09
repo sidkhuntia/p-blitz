@@ -1,7 +1,7 @@
 <form action="/profile" method="post">
   <div class="profile-form-div" id="form1">
     <h3 class="form-card-heading">PERSONAL DETAILS</h3>
-    <img src="https://cdn.pixabay.com/photo/2022/02/11/23/23/heart-7008170_1280.png" alt="" id="preview-img" />
+    <img src="<%= googleUser.user.photos[0].value %> " alt="" id="preview-img" />
     <div class="profile-preview-button">
       <label for="profile-preview" class="profile-label-btn" id="">Select Photo</label>
     </div>
@@ -61,9 +61,3 @@
     </div>
   </div>
 </form>
-
-<script>
-  var form1 = document.getElementById("form1");
-  var form2 = document.getElementById("form2");
-  var form3 = document.getElementById("form3");
-</script>
