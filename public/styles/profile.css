@@ -15,7 +15,7 @@
     color: #777;
 }
 
-.card-container form {
+.card-container .profile-form-div {
     width: 280px;
     position: absolute;
     top: 100px;

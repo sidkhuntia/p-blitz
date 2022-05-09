@@ -30,15 +30,8 @@ function calculateCreditScore(income) {
 
 app.get("/", async (req, res) => {
   // console.log(googleUser.user);
-  let searchOptions = {};
-  try {
-    const profiles = await Profile.find(searchOptions);
-    res.render("profile/new", {
-      profile: profiles,
-    });
-  } catch {
-    res.redirect("/");
-  }
+  renderNewPage(res, new Profile());
+
 });
 
 app.post("/", async (req, res) => {
@@ -59,6 +52,7 @@ app.post("/", async (req, res) => {
     monthlySalary: req.body.monthlySalary,
     cibilScore: calculateCreditScore(req.body.monthlySalary).creditScore,
   });
+  console.log(profile);
   try {
     const newProfile = await profile.save();
     res.redirect("/dashboard");
@@ -68,5 +62,33 @@ app.post("/", async (req, res) => {
     });
   }
 });
+
+
+async function renderNewPage(res, loan, errors = false) {
+  renderPage(res, loan, "new", errors);
+}
+
+async function renderPage(res, loan, form, errors = false) {
+  try {
+    const params = {
+      loan: loan,
+    };
+    if (errors) {
+      if (form === "edit") {
+        params.errorMessage = "Error updating loanrequest";
+      } else {
+        params.errorMessage = "Error creating loanrequest";
+      }
+    }
+    res.render(`loanrequest/${form}`, params);
+  } catch {
+    if (loan != null) {
+      renderPage(res, loan, "edit", true);
+    } else {
+      res.redirect("/dashbboard");
+    }
+  }
+}
+
 
 module.exports = app;
