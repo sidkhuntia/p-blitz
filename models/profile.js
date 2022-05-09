@@ -6,9 +6,8 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  email: {
+  userGoogleID:{
     type: String,
-    required: true,
   },
   mobileNumber: {
     type: Number,
@@ -25,16 +24,20 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  cibilScore:{
+  cibilScore: {
     type: Number,
-    min:300,
-    max:700,
+    min: 300,
+    max: 700,
   },
   bankName: {
     type: String,
     required: true,
   },
   bankBranchName: {
+    type: String,
+    required: true,
+  },
+  bankAccountholderName: {
     type: String,
     required: true,
   },
@@ -61,10 +64,9 @@ const userSchema = new mongoose.Schema({
   },
   CTC: {
     type: Number,
-    required: true,
     min: 0,
   },
-  lastMonthSalary: {
+  monthlySalary: {
     type: Number,
     required: true,
     min: 0,
