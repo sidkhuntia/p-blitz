@@ -66,7 +66,7 @@ app.use("/dashboard", isLoggedIn, dashboardRouter);
 app.use("/signup", signupRouter);
 app.use("/notification", isLoggedIn, notificationRouter);
 app.use("/loanrequest", isLoggedIn, loanRequestRouter);
-// app.use("/profile", isLoggedIn, profileRouter);
+app.use("/profile", isLoggedIn, profileRouter);
 
 let googleUser={};
 

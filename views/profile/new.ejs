@@ -1,78 +1,11 @@
-<div class="loan-form-bg">
-  <div class="m-b-50 heading-line">
-    Apply for Loan
-  </div>
-  <div class="loan-form-container">
-    <form class="loan-form" action="/profile" method="post">
-      <%- include('_form_fields.ejs') %>
-      <div class="loan-button-area">
-        <button type="submit" class="loan-button loan-btn-a">Apply</button>
-        <button type="reset" class="loan-button loan-btn-r">Cancel</button>
+<h3 class="m-b-50 heading-line">Profile Details</h3>
+ <div class="card-container">
+    <%- include('_form_fields.ejs') %>
+      <div class="step-row">
+          <div id="progress"></div>
+          <div class="step-col"><small>Step 1</small></div>
+          <div class="step-col"><small>Step 2</small></div>
+          <div class="step-col"><small>Step 3</small></div>
       </div>
-    </form>
   </div>
-</div>
-<style>
-  input[type="text"] {
-    box-sizing: border-box;
-    width: 100%;
-    height: calc(3em + 2px);
-    margin: 0 0 1em;
-    padding: 6px;
-    border: 1px solid black;
-    border-radius: 5px;
-    background: #fff;
-    font-size: 16px;
-    resize: none;
-    outline: none;
-  }
-
-  input[type="text"]:focus {
-    border-color: #00bafa;
-  }
-
-  input[type="text"]:focus + label[placeholder]:before {
-    color: #0091da;
-  }
-
-  input[type="text"]:focus + label[placeholder]:before,
-  input[type="text"]:valid + label[placeholder]:before {
-    transition-duration: 0.2s;
-    transform: translate(0, -1.6em) scale(0.9, 0.9);
-    font-weight: bold;
-  }
-
-  input[type="text"]:valid {
-    border-color: green;
-  }
-
-  input[type="text"]:valid + label[placeholder]:before {
-    color: green;
-  }
-
-  input[type="text"]:invalid + label[placeholder][alt]:before {
-    content: attr(alt);
-  }
-
-  input[type="text"] + label[placeholder] {
-    display: block;
-    pointer-events: none;
-    line-height: 1.25em;
-    margin-top: calc(-3em - 2px);
-    margin-bottom: calc((3em - 1em) + 2px);
-  }
-
-  input[type="text"] + label[placeholder]:before {
-    content: attr(placeholder);
-    display: inline-block;
-    margin: 0 calc(0.5em + 2px);
-    padding: 0 2px;
-    color: #7d7d7d;
-    white-space: nowrap;
-    transition: 0.3s ease-in-out;
-    background-image: linear-gradient(to bottom, #ffffff, #ffffff);
-    background-size: 100% 5px;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-</style>
+<script src="/public/scripts/profilePreview.js"></script>
