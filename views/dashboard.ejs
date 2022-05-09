@@ -1,1 +1,23 @@
 <h2>Dashboard</h2>
+<br />
+<% loans.forEach(loan => { %>
+<div>
+    <%= loan.amount %>
+    <br>
+    <%= loan.interestRate %>
+    <br>
+    <%= loan.tenure %>
+    <br>
+    <%= loan.reason %>
+    <br>
+    <%= loan.createdAt %>
+    <br>
+    <%= loan.creatorGoogleID %>
+    <%- include("./partials/deleteForm",{url:`/loanrequest/${loan.id}`, buttonName: acceptButton}) %>
+    <%- include("./partials/deleteForm",{url:`/loanrequest/${loan.id}`, buttonName: cancelButton}) %>
+    <a href="/loanrequest/<%= loan.id  %>/edit"><button>Modify</button></a>
+    <br>
+    <br>
+
+</div>
+<% }) %>
