@@ -5,8 +5,8 @@
 @import "footer.css";
 @import "header.css";
 @import "loanrequest.css";
+@import "dashboard.css";
 @import "profile.css";
-
 *,
 *::before,
 *::after {
