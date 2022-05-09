@@ -34,10 +34,8 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-const indexRouter = require("./routes/index");
 const authRouter = require("./routes/auth");
 const dashboardRouter = require("./routes/dashboard");
-const signupRouter = require("./routes/singup");
 const notificationRouter = require("./routes/notification");
 const loanRequestRouter = require("./routes/loanrequest");
 const profileRouter = require("./routes/profile");
@@ -68,7 +66,6 @@ app.get("/login", isLogged, (req, res) => {
 
 app.use("/", authRouter);
 app.use("/dashboard", isLoggedIn, dashboardRouter);
-app.use("/signup", signupRouter);
 app.use("/notification", isLoggedIn, notificationRouter);
 app.use("/loanrequest", isLoggedIn, loanRequestRouter);
 app.use("/profile", isLoggedIn, profileRouter);
