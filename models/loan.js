@@ -1,34 +1,30 @@
 const mongoose = require("mongoose");
 
 const loanSchema = new mongoose.Schema({
-  createDate: {
-    type: Date,
-    default: Date.now,
+  amount: {
+    type: String,
+    required: true,
+  },
+  tenure: {
+    type: Number,
     required: true,
   },
   interestRate: {
     type: Number,
     required: true,
-    min: 0,
   },
-  tenure: {
-    type: Number,
-    required: true,
-    min : 0,
-  },
-  createdBy : {
-    type: mongoose.Schema.Types.ObjectId,
-    // ref: "Author",
+  createdAt: {
+    type: Date,
+    default: Date.now,
     required: true,
   },
-  loanAmount: {
-    type: Number,
-    required: true,
-    min: 0,
+  reason: {
+    type: String,
+  },
+  creatorGoogleID: {
+    type: String,
   },
 });
-
 //create a delete method for the model
 
-
-module.exports = mongoose.model("loans", bookSchema);
+module.exports = mongoose.model("loans", loanSchema);

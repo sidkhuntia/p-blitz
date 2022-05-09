@@ -1,0 +1,27 @@
+{
+    id: '101551757101716419575',
+    displayName: 'Siddhartha Khuntia Backup',
+    name: { familyName: 'Khuntia Backup', givenName: 'Siddhartha' },
+    photos: [
+      {
+        value: 'https://lh3.googleusercontent.com/a-/AOh14GgZ9CdWnOeuLLf_ncZdobaOYd5r_zVCxVdoZMcv=s96-c'
+      }
+    ],
+    provider: 'google',
+    _raw: '{\n' +
+      '  "sub": "101551757101716419575",\n' +
+      '  "name": "Siddhartha Khuntia Backup",\n' +
+      '  "given_name": "Siddhartha",\n' +
+      '  "family_name": "Khuntia Backup",\n' +
+      '  "picture": "https://lh3.googleusercontent.com/a-/AOh14GgZ9CdWnOeuLLf_ncZdobaOYd5r_zVCxVdoZMcv\\u003ds96-c",\n' +
+      '  "locale": "en"\n' +
+      '}',
+    _json: {
+      sub: '101551757101716419575',
+      name: 'Siddhartha Khuntia Backup',
+      given_name: 'Siddhartha',
+      family_name: 'Khuntia Backup',
+      picture: 'https://lh3.googleusercontent.com/a-/AOh14GgZ9CdWnOeuLLf_ncZdobaOYd5r_zVCxVdoZMcv=s96-c',
+      locale: 'en'
+    }
+  }
