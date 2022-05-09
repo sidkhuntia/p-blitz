@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
   mobileNumber: {
     type: Number,
     required: true,
-    unique: true,
+    // unique: true,
     min: 0,
   },
   age: {
@@ -54,12 +54,12 @@ const userSchema = new mongoose.Schema({
     type: Number,
     required: true,
     min: 0,
-    unique: true,
+    // unique: true,
   },
   panCardNumber: {
     type: String,
     required: true,
-    unique: true,
+    // unique: true,
     min: 0,
   },
   CTC: {

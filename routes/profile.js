@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const Profile = require("../models/profile");
 var googleUser = require("../server");
-console.log(googleUser.user);
+// console.log(googleUser.user);
 
 function calculateCreditScore(income) {
   let maxLoan = 0.15 * income * 12 * 5;
@@ -30,10 +30,12 @@ function calculateCreditScore(income) {
 
 app.get("/", async (req, res) => {
   // console.log(googleUser.user);
+  console.log(googleUser.user.id);
   const profile = await Profile.findOne({
-    creatorGoogleID: googleUser.user.id,
+    userGoogleID: googleUser.user.id.toString(),
   });
-  if(profile) {
+  console.log(profile);
+  if(profile.userGoogleID===googleUser.user.id) {
     renderNewPage(res,profile);
   } else {
     renderNewPage(res, new Profile());
@@ -64,9 +66,8 @@ app.post("/", async (req, res) => {
     const newProfile = await profile.save();
     res.redirect("/dashboard");
   } catch (error) {
-    res.render("profile/new.ejs", {
-      errorMessage: "Error creating Profile",
-    });
+    renderNewPage(res, profile, true);
+    console.log(error)
   }
 });
 
@@ -79,7 +80,7 @@ async function renderPage(res, profile, form, errors = false) {
   try {
     const params = {
       profile: profile,
-      googleUser:  googleUser,
+      googleUser: googleUser,
     };
     if (errors) {
       if (form === "edit") {
