@@ -158,8 +158,9 @@
     }
 
     .dashboard-container {
-        width: 96vw;
-        margin-left: 2vw;
+        width: 92vw;
+        margin-left: 4vw;
+        padding: 1.5rem 0;
     }
 
     .dashboard-section-50 {
@@ -172,6 +173,7 @@
 
     .dashboard-time {
         font-size: 0.8rem;
+        margin-right: 2px;
     }
     .dashboard-text-muted{
         font-size: 1rem;
