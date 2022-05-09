@@ -8,29 +8,8 @@
     position: relative;
 }
 
-.m-b-50 {
-    margin-bottom: 50px;
-}
-
 .dark-link {
     color: #333;
-}
-
-.heading-line {
-    position: relative;
-    padding-bottom: 5px;
-    font-size: 1.8rem;
-    margin-left: 15%;
-}
-
-.heading-line:after {
-    content: "";
-    height: 4px;
-    width: 75px;
-    background-color: #29B6F6;
-    position: absolute;
-    bottom: 0;
-    left: 0;
 }
 
 .notification-ui_dd-content {
