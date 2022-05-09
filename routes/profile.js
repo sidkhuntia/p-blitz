@@ -35,7 +35,7 @@ app.get("/", async (req, res) => {
     userGoogleID: googleUser.user.id.toString(),
   });
   console.log(profile);
-  if(profile.userGoogleID===googleUser.user.id) {
+  if(profile!==null) {
     renderNewPage(res,profile);
   } else {
     renderNewPage(res, new Profile());
