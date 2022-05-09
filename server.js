@@ -42,7 +42,10 @@ const notificationRouter = require("./routes/notification");
 const loanRequestRouter = require("./routes/loanrequest");
 const profileRouter = require("./routes/profile");
 
+var googleUser = new Object();
 const isLoggedIn = (req, res, next) => {
+  googleUser = req.user;
+  exports.user = googleUser;
   if (req.user) {
     next();
   } else {
@@ -51,6 +54,8 @@ const isLoggedIn = (req, res, next) => {
 };
 
 const isLogged = (req, res, next) => {
+  googleUser = req.user;
+  exports.user = googleUser;
   if (req.user) {
     next();
   } else {
@@ -68,15 +73,11 @@ app.use("/notification", isLoggedIn, notificationRouter);
 app.use("/loanrequest", isLoggedIn, loanRequestRouter);
 // app.use("/profile", isLoggedIn, profileRouter);
 
-let googleUser={};
-
 app.get("/", isLoggedIn, (req, res) => {
-  googleUser = req.user;
-  res.render("index", { user: req.user.displayName });
-  app.use("/", indexRouter);
+  // res.render("index", { user: req.user.displayName });
+  res.redirect("/dashboard");
 });
 
-//if user is not logged in, redirect to login page
 app.get("/logout", (req, res) => {
   req.session = null;
   req.logout();
@@ -85,8 +86,6 @@ app.get("/logout", (req, res) => {
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log(`Listening on port ${port}.....`);
+  console.log(`http://localhost:${port}`);
 });
 
-
-// console.log(localStorage.getItem("user"));
