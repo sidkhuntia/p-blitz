@@ -3,7 +3,6 @@ const app = express();
 const Loan = require("../models/loan");
 var googleUser = require("../server");
 
-var moment = require("moment"); // require
 
 const TimeAgo = require("javascript-time-ago");
 const en = require("javascript-time-ago/locale/en");
