@@ -3,7 +3,7 @@
     margin: 0;
 }
 
-.dashboad-section-50 {
+.dashboard-section-50 {
     padding: 50px 0;
     width: 100vw;
     font-family: "Roboto", sans-serif;
@@ -12,13 +12,9 @@
     position: relative;
 }
 
-.dashboad-m-b-50 {
+.dashboard-m-b-50 {
     margin-bottom: 50px;
 }
-
-/* .dark-link {
-    color: #333;
-} */
 
 .heading-line {
     position: relative;
@@ -37,11 +33,11 @@
     left: 0;
 }
 
-.dashboad-ui_dd-content {
+.dashboard-ui_dd-content {
     margin-bottom: 30px;
 }
 
-.dashboad-list {
+.dashboard-list {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -59,50 +55,34 @@
     border-radius: 0.4rem;
 }
 
-.dashboad-list .dashboad-list_content {
+.dashboard-list .dashboard-list_content {
     display: -webkit-box;
     display: -ms-flexbox;
     font-size: 20px;
 }
 
-/* .notification-list .notification-list_content  */
-.dashboad-list_img img {
+.dashboard-list_img img {
     height: 3.3rem;
     width: 3.3rem;
     border-radius: 50px;
     margin-right: 20px;
 }
 
-/* .notification-list .notification-list_content .notification-list_detail p { */
-    /* margin-bottom: 5px; */
-    /* line-height: 1.2; */
-    /* border: 2px solid black; */
-/* } */
-
-.dashboad-list_detail {
+.dashboard-list_detail {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 2px solid black; */
 }
 
-.dashboad-text-muted {
+.dashboard-text-muted {
     color: #6c757d;
 }
 
-/* .notification-list .notification-list_feature-img img {
-    height: 48px;
-    width: 48px;
-    border-radius: 5px;
-    margin-left: 20px;
-} */
-
-.dashboad-container {
+.dashboard-container {
     width: 100vw;
-    /* border: 2px solid black; */
 }
 
-.dashboad-btn-container {
+.dashboard-btn-container {
     margin-top: 15px;
     display: flex;
     justify-content: space-between;
@@ -110,7 +90,7 @@
     margin-right: 15%;
 }
 
-.dashboad-button {
+.dashboard-button {
 
     background-color: white;
     border: 0;
@@ -126,59 +106,55 @@
     border-bottom: 4px solid lighten(gray, 70%);
 }
 
-.dashboad-btn-a {
+.dashboard-btn-a {
     background-color: #137B1F;
     color: #F8F8F8;
 
 }
-.dashboad-btn-a:hover,.dashboad-btn-a:active,.dashboad-btn-a:focus {
+.dashboard-btn-a:hover,.dashboard-btn-a:active,.dashboard-btn-a:focus {
     background-color: #137B1F;
     color: #F8F8F8;
 
 }
-.dashboad-btn-n {
+.dashboard-btn-n {
     background-color: #A3A4A3;
     color: #282623;
 
 }
-.dashboad-btn-n:hover,.dashboad-btn-n:active,.dashboad-btn-n:focus {
+.dashboard-btn-n:hover,.dashboard-btn-n:active,.dashboard-btn-n:focus {
     background-color: #1D4ED3;
     color: #F8F8F8;
 
 }
-.dashboad-btn-r {
+.dashboard-btn-r {
     background-color: #A3A4A3;
     color: #282623;
 }
 
-.dashboad-time {
+.dashboard-time {
     color: #6c757d;
     position: relative;
     margin-left: auto;
     height: max-content;
-    /* border: 2px solid red; */
-
 }
-
-.dashboad-button:hover {
+.dashboard-button:hover {
     box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
     transform: scale(1.06);
 }
 
-.dashboad-button:active {
+.dashboard-button:active {
     box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
     transform: scale(.94);
 }
 
-.dashboad-button:focus {
+.dashboard-button:focus {
     outline: 0;
 }
-.dashboad-loan-info{
+.dashboard-loan-info{
     font-size: large;
     padding: 0.8rem;
 }
-.dashboad-loan-reason{
-    /* border: 2px solid black; */
+.dashboard-loan-reason{
     width: 80%;
     margin-left: 10%;
     padding: 1rem;
@@ -188,53 +164,27 @@
         font-size: 16px;
     }
 
-    .dashboad-list_detail {
+    .dashboard-list_detail {
         font-size: 15.6px;
     }
 
-    .dashboad-container {
+    .dashboard-container {
         width: 96vw;
         margin-left: 2vw;
     }
 
-    .dashboad-section-50 {
+    .dashboard-section-50 {
         width: 100vw;
-    }
-
-    /* .btn-r { */
-        /* margin-left: 20px; */
-    /* } */
-
-    /* .dashboad-button {
-        padding: 5px;
-        font-size: 12px;
-        width: 70px;
-        font-family: inherit;
-        box-shadow: 0px 5px 10px rgba(darken(dodgerblue, 40%));
-        transition: all .3s;
-        cursor: pointer;
-        border-radius: 5px;
-        border-bottom: 4px solid lighten(gray, 70%);
-    } */
-
-    .dashboad-list .notification-list_feature-img img {
-        height: 36px;
-        width: 36px;
-        border-radius: 5px;
-        margin-left: 12px;
     }
 
     .heading-line {
         margin-left: 10%;
     }
 
-    .dashboad-time {
+    .dashboard-time {
         font-size: 0.8rem;
-        /* display: inline; */
-        /* margin-left: -5vh; */
     }
-    .dashboad-text-muted{
-        /* display: block; */
+    .dashboard-text-muted{
         font-size: 1rem;
     }
     .heading-line:after {
@@ -246,72 +196,62 @@
         bottom: 0;
         left: 0;
     }
-    .dashboad-btn-container {
+    .dashboard-btn-container {
         margin-top: 15px;
         display: flex;
         justify-content: space-around;
         margin-left: 0;
         margin-right: 0;
-        /* width: 100%; */
     }
-    .dashboad-list_img {
+    .dashboard-list_img {
         height: 3rem;
         width: 3.25rem;
-        /* border: 2px solid black; */
         margin-left: -0.5rem;
     }
-    .dashboad-list_img img {
+    .dashboard-list_img img {
         height: 3rem;
         width: 3rem;
         border-radius: 50px;
-        /* margin-right: 20px; */
     }
-    .dashboad-list_detail p{
+    .dashboard-list_detail p{
         font-size: 1.2rem;
     }
 }
 
-.dashboad-two-column {
+.dashboard-two-column {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 80%;
+    width: 85%;
     margin-left: 10%;
-    /* border: 2px solid black; */
 }
 
-.dashboad-left {
-    width: 47%;
-    /* text-align: left; */
-    /* border: 2px solid black; */
+.dashboard-left {
+    width: 50%;
 }
 
-.dashboad-right {
-    width: 47%;
-    /* text-align: right; */
-    /* border: 2px solid black; */
+.dashboard-right {
+    width: 50%;
 }
 
 @media only screen and (max-width: 799px) {
-    .dashboad-two-column {
+    .dashboard-two-column {
         display: block;
+        width: 80%;
     }
 
-    .dashboad-left {
+    .dashboard-left {
         width: 100%;
-        /* border: 2px solid black; */
     }
 
-    .dashboad-right {
+    .dashboard-right {
         width: 100%;
-        /* border: 2px solid black; */
     }
-    .dashboad-loan-info{
+    .dashboard-loan-info{
         font-size: medium;
         padding: 0.5rem;
     }
-    .dashboad-loan-reason{
-        /* border: 2px solid black; */
+    .dashboard-loan-reason{
         width: 80%;
         margin-left: 10%;
         padding: 0.5rem;
