@@ -21,7 +21,9 @@
   <body>
     <div class="container">
       <%- include('../partials/header.ejs') %>
-      <%-include('../partials/errorMessage.ejs')%> <%- body %>
+      <div class="body-page">
+        <%-include('../partials/errorMessage.ejs')%> <%- body %>
+      </div>
        <%-include('../partials/footer.ejs') %>
     </div>
   </body>
