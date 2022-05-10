@@ -3,6 +3,7 @@
         <h3 class="m-b-50 heading-line">Notifications   <i class="fa fa-bell"></i></h3>
         <div class="notification-ui_dd-content">
         <% negotiateLoans.forEach(loan => { %>
+            <% if(loan.creatorGoogleID===userGoogleID){ %>
             <div class="notification-list">
                 <div class="notification-container">
                     <div class="notification-list_content">
@@ -25,6 +26,7 @@
                     </div>
                 </div>
             </div>
+            <% } %>
         <% }) %>
         </div>
     </div>
