@@ -11,7 +11,6 @@ const timeAgo = new TimeAgo("en-US");
 
 app.get("/", async (req, res) => {
   let searchOptions = {};
-  console.log(googleUser.user);
   try {
     const loans = await Loan.find(searchOptions);
     res.render("dashboard", {

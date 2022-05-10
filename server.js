@@ -6,6 +6,8 @@ const cookieSession = require("cookie-session");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 
+const Profile = require("./models/profile");
+
 require("./routes/auth");
 
 const app = express();
@@ -52,6 +54,19 @@ const isLoggedIn = (req, res, next) => {
   }
 };
 
+//check wheter profile is created
+const isProfileCreated = async (req, res, next) => {
+  googleUser = req.user;
+  const profile = await Profile.findOne({
+    userGoogleID: googleUser.id.toString(),
+  });
+  if (profile) {
+    next();
+  } else {
+    res.redirect("/profile");
+  }
+};
+
 const isLogged = (req, res, next) => {
   googleUser = req.user;
   exports.user = googleUser;
@@ -68,7 +83,7 @@ app.get("/login", isLogged, (req, res) => {
 app.use("/", authRouter);
 app.use("/dashboard", isLoggedIn, dashboardRouter);
 app.use("/notification", isLoggedIn, notificationRouter);
-app.use("/loanrequest", isLoggedIn, loanRequestRouter);
+app.use("/loanrequest",isLoggedIn, isProfileCreated, loanRequestRouter);
 app.use("/profile", isLoggedIn, profileRouter);
 app.use("/contactus", contactUsRouter);
 
@@ -87,4 +102,3 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`http://localhost:${port}`);
 });
-

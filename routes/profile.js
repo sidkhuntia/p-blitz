@@ -30,11 +30,11 @@ function calculateCreditScore(income) {
 
 app.get("/", async (req, res) => {
   // console.log(googleUser.user);
-  console.log(googleUser.user.id);
+  // console.log(googleUser.user.id);
   const profile = await Profile.findOne({
     userGoogleID: googleUser.user.id.toString(),
   });
-  console.log(profile);
+  // console.log(profile);
   if(profile!==null) {
     renderNewPage(res,profile);
   } else {
@@ -61,7 +61,7 @@ app.post("/", async (req, res) => {
     monthlySalary: req.body.monthlySalary,
     cibilScore: calculateCreditScore(req.body.monthlySalary).creditScore,
   });
-  console.log(profile);
+  // console.log(profile);
   try {
     const newProfile = await profile.save();
     res.redirect("/dashboard");

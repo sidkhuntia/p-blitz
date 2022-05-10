@@ -13,7 +13,6 @@ const timeAgo = new TimeAgo("en-US");
 
 //author home page
 app.get("/", async (req, res) => {
-  console.log(googleUser.user);
   renderNewPage(res, new Loan());
 });
 

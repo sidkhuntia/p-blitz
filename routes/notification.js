@@ -7,12 +7,12 @@ var googleUser = require("../server")
 
 
 app.get("/", async (req, res) => {
-  console.log(googleUser.user);
+  // console.log(googleUser.user);
   let searchOptions = {};
   try {
     const negotiateLoans = await NegotiateLoan.find(searchOptions);
     const profiles = await Profile.find();
-    console.log(negotiateLoans);
+    // console.log(negotiateLoans);
     res.render("notification", {
       negotiateLoans: negotiateLoans,
       profiles: profiles,

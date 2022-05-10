@@ -26,6 +26,7 @@ const loanSchema = new mongoose.Schema({
   },
   creatorCibilScore: {
     type: Number,
+    default: 500,
   },
   creatorName: {
     type: String,
