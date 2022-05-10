@@ -42,6 +42,9 @@ const notificationRouter = require("./routes/notification");
 const loanRequestRouter = require("./routes/loanrequest");
 const profileRouter = require("./routes/profile");
 const contactUsRouter = require("./routes/contactus");
+const aboutUsRouter = require("./routes/aboutus");
+const servicesRouter = require("./routes/services");
+const termsRouter = require("./routes/terms");
 const negotiateRouter = require("./routes/negotiateLoan");
 
 var googleUser = new Object();
@@ -77,6 +80,20 @@ const isLogged = (req, res, next) => {
     res.render("login");
   }
 };
+
+const isEligible = async (req, res, next) => {
+  googleUser = req.user;
+  const profile = await Profile.findOne({
+    userGoogleID: googleUser.id.toString(),
+  });
+  if (profile.cibilScore >=312) {
+    next();
+  } else {
+    res.redirect("/dashboard");
+  }
+}
+
+
 app.get("/login", isLogged, (req, res) => {
   res.redirect("/dashboard");
 });
@@ -84,9 +101,12 @@ app.get("/login", isLogged, (req, res) => {
 app.use("/", authRouter);
 app.use("/dashboard", isLoggedIn, dashboardRouter);
 app.use("/notification", isLoggedIn, notificationRouter);
-app.use("/loanrequest",isLoggedIn, isProfileCreated, loanRequestRouter);
+app.use("/loanrequest",isLoggedIn, isProfileCreated,isEligible, loanRequestRouter);
 app.use("/profile", isLoggedIn, profileRouter);
 app.use("/contactus", contactUsRouter);
+app.use("/aboutus", aboutUsRouter);
+app.use("/services", servicesRouter);
+app.use("/terms", termsRouter);
 app.use("/negotiate",isLoggedIn,isProfileCreated, negotiateRouter);
 
 app.get("/", isLoggedIn, (req, res) => {

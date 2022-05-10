@@ -106,8 +106,9 @@ app.put("/:id", async (req, res) => {
   res.redirect("/profile");
   } catch {
     if (profile != null) {
-      renderPage(res, negotiateLoans, "edit", true);
+      renderPage(res, profile, "edit", true);
     } else {
+      
       res.redirect("/dashboard");
     }
   }

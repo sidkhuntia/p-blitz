@@ -59,6 +59,7 @@ app.put("/:id", async (req, res) => {
     creatorCibilScore: loan.creatorCibilScore,
     creatorName: loan.creatorName,
     negotiatorGoogleID: googleUser.user.id.toString(),
+    negotiatorPhoto: googleUser.user.photos[0].value.toString(),
     negotiator: negotiator.name,
     modifiedAt: Date.now(),
   });
