@@ -124,7 +124,7 @@
     }
 }
 
-@media (max-width: 799px) {
+@media (max-width: 800px) {
     .header-nav__wrapper {
         position: absolute;
         top: 100%;
@@ -189,6 +189,7 @@
     height: 34px;
     /* add profile picture to background */
     background: url("/public/images/logo.png") center right/22px no-repeat;
+    /* border: 2px solid white; */
     border: 0;
 }
 
