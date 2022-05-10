@@ -6,6 +6,18 @@ const NegotiateLoan = require("../models/negotiateLoans");
 const user = require("../server.js");
 var googleUser = require("../server");
 
+const nodemailer = require("nodemailer");
+
+const transporter = nodemailer.createTransport({
+  port: 465, // true for 465, false for other ports
+  host: "smtp.gmail.com",
+  auth: {
+    user: "p.blitz2022@gmail.com",
+    pass: process.env.EMAIL_PASSWORD,
+  },
+  secure: true,
+});
+
 const TimeAgo = require("javascript-time-ago");
 const en = require("javascript-time-ago/locale/en");
 TimeAgo.addDefaultLocale(en);
@@ -58,6 +70,8 @@ app.put("/:id", async (req, res) => {
     creatorGoogleID: loan.creatorGoogleID,
     creatorCibilScore: loan.creatorCibilScore,
     creatorName: loan.creatorName,
+    creatorEmail: loan.creatorEmail,
+    negotiatorEmail: negotiator.userEmail,
     negotiatorGoogleID: googleUser.user.id.toString(),
     negotiatorPhoto: googleUser.user.photos[0].value.toString(),
     negotiator: negotiator.name,
@@ -65,6 +79,19 @@ app.put("/:id", async (req, res) => {
   });
   try {
     await negotiateLoans.save();
+    console.log(loan.creatorEmail)
+
+    const mailData = {
+      from: "p.blitz2002@gmail.com", // sender address
+      to:  loan.creatorEmail, // list of receivers
+      subject: "You have an offer from " + negotiator.name, // Subject line
+      html: '<b>Hey there! </b><br> You got an notification. <a href="p-blitz.herokuapp.com">Click Here</a><br/>'
+    };
+
+    transporter.sendMail(mailData, function (err, info) {
+      if (err) console.log(err);
+      else console.log(info);
+    });
     res.redirect("/dashboard");
   } catch {
     if (negotiateLoans != null) {

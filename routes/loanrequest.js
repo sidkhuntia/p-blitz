@@ -16,7 +16,7 @@ app.get("/", async (req, res) => {
   const creator = await Profile.findOne({
     userGoogleID: googleUser.user.id.toString(),
   });
-  // console.log(creator)
+  // console.log(googleUser.user)
   renderNewPage(res, new Loan());
 });
 
@@ -27,6 +27,7 @@ app.post("/", async (req, res) => {
   const loan = new Loan({
     amount: req.body.amount,
     createdAt: Date.now(),
+    creatorEmail: creator.userEmail,
     tenure: req.body.tenure,
     interestRate: req.body.interestRate,
     reason: req.body.reason,

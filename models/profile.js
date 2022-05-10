@@ -9,6 +9,9 @@ const userSchema = new mongoose.Schema({
   userGoogleID:{
     type: String,
   },
+  userEmail: {
+    type: String,
+  },
   mobileNumber: {
     type: Number,
     required: true,
@@ -22,7 +25,6 @@ const userSchema = new mongoose.Schema({
   },
   gender: {
     type: String,
-    required: true,
   },
   cibilScore: {
     type: Number,

@@ -34,6 +34,9 @@ const loanSchema = new mongoose.Schema({
   creatorName: {
     type: String,
   },
+  creatorEmail: {
+    type: String,
+  },
 });
 //create a delete method for the model
 

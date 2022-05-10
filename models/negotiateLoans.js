@@ -33,6 +33,13 @@ const negotiateLoanSchema = new mongoose.Schema({
   creatorName: {
     type: String,
   },
+  creatorEmail: {
+    type: String,
+  },
+  negotiatorEmail: {
+    type: String,
+  },
+  
   negotiatorGoogleID: {
     type: String,
   },
