@@ -31,6 +31,7 @@ app.post("/", async (req, res) => {
     interestRate: req.body.interestRate,
     reason: req.body.reason,
     creatorGoogleID: googleUser.user.id.toString(),
+    creatorPhoto : googleUser.user.photos[0].value.toString(),
     creatorCibilScore: creator.cibilScore,
     creatorName: creator.name,
   });

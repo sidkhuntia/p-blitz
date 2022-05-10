@@ -36,6 +36,9 @@ const negotiateLoanSchema = new mongoose.Schema({
   negotiatorGoogleID: {
     type: String,
   },
+  negotiatorPhoto: {
+    type: String,
+  },
   negotiator: {
     type: String,
   },

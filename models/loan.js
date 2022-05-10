@@ -24,6 +24,9 @@ const loanSchema = new mongoose.Schema({
   creatorGoogleID: {
     type: String,
   },
+  creatorPhoto: {
+    type: String,
+  },
   creatorCibilScore: {
     type: Number,
     default: 500,
