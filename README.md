@@ -14,22 +14,65 @@
 ```
 .
 ├── models
+│   ├── loan.js
+│   ├── negotiateLoans.js
+│   └── profile.js
 ├── package.json
 ├── package-lock.json
 ├── public
+│   ├── images
+│   │   ├── login-page-wallpaper.jpg
+│   │   ├── logo.png
+│   │   └── menu.svg
 │   ├── scripts
-│   │   └── index.js
+│   │   ├── header.js
+│   │   ├── index.js
+│   │   ├── profilePreview.js
+│   │   └── timeAgo.js
 │   └── styles
-│       └── main.css
+│       ├── dashboard.css
+│       ├── footer.css
+│       ├── header.css
+│       ├── loanrequest.css
+│       ├── login.css
+│       ├── main.css
+│       ├── notification.css
+│       ├── profile.css
+│       └── show.css
 ├── README.md
+├── rough.txt
 ├── routes
-│   └── index.js
+│   ├── auth.js
+│   ├── contactus.js
+│   ├── dashboard.js
+│   ├── index.js
+│   ├── loanrequest.js
+│   ├── negotiateLoan.js
+│   ├── notification.js
+│   └── profile.js
 ├── server.js
 └── views
+    ├── contactus.ejs
+    ├── dashboard.ejs
     ├── index.ejs
     ├── layouts
     │   └── layout.ejs
-    └── partials
-        ├── footer.ejs
-        └── header.ejs
+    ├── loanrequest
+    │   ├── edit.ejs
+    │   ├── _form_fields2.ejs
+    │   ├── _form_fields.ejs
+    │   └── new.ejs
+    ├── login.ejs
+    ├── notification.ejs
+    ├── partials
+    │   ├── deleteForm.ejs
+    │   ├── dualDeleteForm.ejs
+    │   ├── errorMessage.ejs
+    │   ├── footer.ejs
+    │   └── header.ejs
+    └── profile
+        ├── edit.ejs
+        ├── _form_fields.ejs
+        ├── new.ejs
+        └── show.ejs
 ```
