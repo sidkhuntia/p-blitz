@@ -182,7 +182,7 @@
     width: 34px;
     height: 34px;
     /* add profile picture to background */
-    background: url("/public/images/logo.png") center right/22px no-repeat;
+    background: url("/public/images/logo.png") center right/20px no-repeat;
     border: 0;
 }
 
