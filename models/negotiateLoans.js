@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const negotiateLoanSchema = new mongoose.Schema({
+  loanID: {
+    type: String,
+    
+  },
   amount: {
     type: Number,
     required: true,

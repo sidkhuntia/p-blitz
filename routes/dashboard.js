@@ -20,6 +20,7 @@ app.get("/", async (req, res) => {
       negotiateButton: "Negotiate",
       rejectButton: "Reject",
       userGoogleID: googleUser.user.id,
+      googleUser: googleUser,
     });
   } catch {
     res.redirect("/");

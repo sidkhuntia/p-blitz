@@ -40,11 +40,13 @@ app.post("/", async (req, res) => {
 });
 
 app.delete("/:id", async (req, res) => {
-  let loan, loans;
+  let loan, loans, negotiateLoan;
   try {
-    loan = await Loan.findById(req.params.id);
+    // loan = await Loan.findById(req.params.id);
+    negotiateLoan = await NegotiateLoan.findById(req.params.id);
     loans = await Loan.find();
-    await loan.remove();
+    // await loan.remove();
+    await negotiateLoan.remove();
     res.redirect("/dashboard");
   } catch (error) {
     if (loan != null) {
@@ -60,7 +62,8 @@ app.delete("/:id", async (req, res) => {
 
 app.get("/:id/edit", async (req, res) => {
   try {
-    const loan = await Loan.findById(req.params.id);
+  const loan = await Loan.findById(req.params.id);
+  console.log(loan._id.toString());
     renderPage(res, loan, "edit");
   } catch {
     res.redirect("/dashboard");
@@ -73,6 +76,7 @@ app.put("/:id", async (req, res) => {
   });
   const loan = await Loan.findById(req.params.id);
   const negotiateLoans = new NegotiateLoan({
+    loanID: loan._id.toString(),
     amount: req.body.amount,
     createdAt: Date.now(),
     tenure: req.body.tenure,

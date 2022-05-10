@@ -20,12 +20,12 @@
                     </div>
                     <div class="btn-container d-flex justify-content-between">
                         <!-- <button  class="button btn-a">ACCEPT</button> -->
-                        <%- include("./partials/deleteForm",{url:`/loanrequest/${loan.id}`, buttonName: acceptButton}) %>
+                        <%- include("./partials/deleteForm",{url:`/loanrequest/${loan.loanID}`, buttonName: acceptButton}) %>
 
                         <button class="button btn-r">REJECT</button>
                     </div>
                 </div>
-            </div>
+            </div> 
             <% } %>
         <% }) %>
         </div>
