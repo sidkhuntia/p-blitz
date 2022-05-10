@@ -1,19 +1,15 @@
 <div class="loan-two-column" id="">
   <div class="loan-left">
-    <input
-      id="loan-amount"
-      type="text"
-      name="amount"
-      value="<%= loan.amount %>"
-      required
-      readonly
-      onkeypress="return isNumberKey(event)"
-    />
-    <label
-      for="loan-amount"
-      alt="Loan amount (in Rs.)"
-      placeholder="dkabsjbdf"
-    ></label>
+    <div class="negotiate-loan-info">
+      <b>Loan amount:</b>
+      ₹ <%= loan.amount %>
+    </div>
+    <div class="negotiate-loan-info">
+      <b>Credit scrore:</b>
+      <%= loan.creatorCibilScore %>
+    </div>
+  </div>
+  <div class="loan-right">
     <input
       id="loan-tenure"
       type="text"
@@ -27,20 +23,6 @@
       alt="Tenure (in months)"
       placeholder="Tenure (in months)"
     ></label>
-  </div>
-  <div class="loan-right">
-    <input
-      id="loan-credit-score"
-      type="text"
-      value="<%= user.cibilScore %>"
-      disabled
-      class="loan-diabled-input"
-    />
-    <label
-      for="loan-credit-score"
-      alt="Credit scrore"
-      placeholder="Credit Score"
-    ></label>
     <input
       id="loan-interest-rate"
       type="text"
@@ -51,8 +33,15 @@
     />
     <label
       for="loan-interest-rate"
-      alt="Interest Rate (in % per Year)"
-      placeholder="Interest Rate (in % per Year)"
+      alt="Interest Rate (% per yr)"
+      placeholder="Interest Rate (% per yr)"
     ></label>
   </div>
 </div>
+<style>
+  .negotiate-loan-info{
+    padding: 1rem 0.35rem;
+    /* border: 2px solid black; */
+    margin-bottom: 0.7rem;
+  }
+</style>
