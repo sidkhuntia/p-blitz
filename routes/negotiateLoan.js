@@ -50,7 +50,7 @@ app.put("/:id", async (req, res) => {
   const loan = await Loan.findById(req.params.id);
   const negotiateLoans = new NegotiateLoan({
     loanID: loan._id.toString(),
-    amount: req.body.amount,
+    amount: loan.amount,
     createdAt: Date.now(),
     tenure: req.body.tenure,
     interestRate: req.body.interestRate,
