@@ -1,0 +1,78 @@
+.preview-card-container {
+    width: 360px;
+    height: 500px;
+    margin: 4% auto;
+    background: #fff;
+    border-radius: 5px;
+    position: relative;
+    /* overflow: hidden; */
+    padding-top: 2.6%;
+    box-shadow: 0 3px 10px 4px rgba(0, 0, 0, 0.08);
+}
+
+.preveiw-form-card-heading {
+    text-align: center;
+    margin-bottom: 40px;
+    color: rgb(29, 28, 28);
+}
+
+.preview-profile-form-div {
+    text-align: center;
+    padding-top: 20px;
+    transition: 0.5s;
+}
+
+.preview-form-btn-box {
+    width: 100%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.preview-form-btn-box button {
+    width: 110px;
+    height: 35px;
+    margin: 0 10px;
+    background: #5CB85B;
+    border-radius: 30px;
+    border: 0;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+.preview-profile-form-div img {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.preview-profile-form-div p {
+   font-size: 16px;
+   padding-bottom: 8px;
+   margin-bottom: 10px;
+}
+/* .profile-preview-button {
+    display: block;
+    text-align: center;
+    margin-top: 4px;
+} */
+.profile-label-btn{
+    padding-top: 5px;
+    background-color: whitesmoke;
+    color: #777;
+    border-radius: 5px;
+    display: inline-block;
+    width: 90px;
+    height: 24px;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+.preview-main-content{
+    text-align: left;
+    margin-left: 12%;
+}
