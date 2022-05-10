@@ -64,7 +64,7 @@ app.post("/", async (req, res) => {
   // console.log(profile);
   try {
     const newProfile = await profile.save();
-    res.redirect("/dashboard");
+    res.redirect("/loanrequest");
   } catch (error) {
     renderNewPage(res, profile, true);
     console.log(error)
@@ -94,7 +94,7 @@ async function renderPage(res, profile, form, errors = false) {
     if (loan != null) {
       renderPage(res, loan, "edit", true);
     } else {
-      res.redirect("/dashbboard");
+      res.redirect("/loanrequest");
     }
   }
 }
