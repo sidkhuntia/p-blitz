@@ -16,11 +16,14 @@ app.get("/", async (req, res) => {
   const creator = await Profile.findOne({
     userGoogleID: googleUser.user.id.toString(),
   });
-  console.log(creator)
+  // console.log(creator)
   renderNewPage(res, new Loan());
 });
 
 app.post("/", async (req, res) => {
+  const creator = await Profile.findOne({
+    userGoogleID: googleUser.user.id.toString(),
+  });
   const loan = new Loan({
     amount: req.body.amount,
     createdAt: Date.now(),
@@ -55,47 +58,6 @@ app.delete("/:id", async (req, res) => {
         errorMessage: "Error deleting loan",
         
       });
-    } else {
-      res.redirect("/dashboard");
-    }
-  }
-});
-
-app.get("/:id/edit", async (req, res) => {
-  try {
-  const loan = await Loan.findById(req.params.id);
-  console.log(loan._id.toString());
-    renderPage(res, loan, "edit");
-  } catch {
-    res.redirect("/dashboard");
-  }
-});
-
-app.put("/:id", async (req, res) => {
-  const negotiator = await Profile.findOne({
-    userGoogleID: googleUser.user.id.toString(),
-  });
-  const loan = await Loan.findById(req.params.id);
-  const negotiateLoans = new NegotiateLoan({
-    loanID: loan._id.toString(),
-    amount: req.body.amount,
-    createdAt: Date.now(),
-    tenure: req.body.tenure,
-    interestRate: req.body.interestRate,
-    reason: req.body.reason,
-    creatorGoogleID: loan.creatorGoogleID,
-    creatorCibilScore: loan.creatorCibilScore,
-    creatorName: loan.creatorName,
-    negotiatorGoogleID: googleUser.user.id.toString(),
-    negotiator: negotiator.name,
-    modifiedAt: Date.now(),
-  });
-  try {
-    await negotiateLoans.save();
-    res.redirect("/dashboard");
-  } catch {
-    if (negotiateLoans != null) {
-      renderPage(res, negotiateLoans, "edit", true);
     } else {
       res.redirect("/dashboard");
     }
