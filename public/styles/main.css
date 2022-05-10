@@ -7,6 +7,7 @@
 @import "dashboard.css";
 @import "profile.css";
 @import "show.css";
+@import "errormessage";
 *,
 *::before,
 *::after {
