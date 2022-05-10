@@ -43,6 +43,8 @@ const loanRequestRouter = require("./routes/loanrequest");
 const profileRouter = require("./routes/profile");
 const contactUsRouter = require("./routes/contactus");
 const servicesRouter = require("./routes/services");
+const termsRouter = require("./routes/terms");
+const faqRouter = require("./routes/faq");
 const negotiateRouter = require("./routes/negotiateLoan");
 
 var googleUser = new Object();
@@ -103,6 +105,8 @@ app.use("/loanrequest",isLoggedIn, isProfileCreated,isEligible, loanRequestRoute
 app.use("/profile", isLoggedIn, profileRouter);
 app.use("/contactus", contactUsRouter);
 app.use("/services", servicesRouter);
+app.use("/terms", termsRouter);
+app.use("/faq", faqRouter);
 app.use("/negotiate",isLoggedIn,isProfileCreated, negotiateRouter);
 
 app.get("/", isLoggedIn, (req, res) => {
