@@ -1,5 +1,4 @@
-<style>
-   /* @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -33,7 +32,6 @@ body{
   min-width: 420px;
   position: absolute;
   left: 0;
-  z-index: 999;
   bottom: 20px;
   border-radius: 4px;
   border-left: 8px solid #ff0202;
@@ -109,31 +107,3 @@ body{
   font-size: 22px;
   line-height: 40px;
 }
-</style>
-<% if(locals.errorMessage!= null){ %> 
-     <!-- <button class="error-button">Show Alert</button> -->
-      <div class="error-alert error-hide">
-         <span class="fas fa-exclamation-circle"></span>
-         <span class="msg"><%= errorMessage %> </span>
-         <div class="error-close-btn">
-            <span class="fas fa-times"></span>
-         </div>
-      </div>
-
-      <% } %>
-
-      <script>
-         $('button').click(function(){
-           $('.error-alert').addClass("error-show");
-           $('.error-alert').removeClass("error-hide");
-           $('.error-alert').addClass("error-showAlert");
-           setTimeout(function(){
-             $('.error-alert').removeClass("error-show");
-             $('.error-alert').addClass("error-hide");
-           },1000);
-         });
-         $('.close-btn').click(function(){
-           $('.error-alert').removeClass("error-show");
-           $('.error-alert').addClass("error-hide");
-         });
-      </script>
