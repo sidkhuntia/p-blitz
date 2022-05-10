@@ -1,0 +1,296 @@
+<section class="accordion container">
+    <div class="accordion__container">
+        <div class="accordion__item">
+            <header class="accordion__header">
+                <i class='bx bx-plus accordion__icon'></i>
+                <h3 class="accordion__title">Why use our website?</h3>
+            </header>
+
+            <div class="accordion__content">
+                <p class="accordion__description">
+                    Because we provide instant loan at very low rate of interest.
+                </p>
+            </div>
+        </div>
+
+        <div class="accordion__item">
+            <header class="accordion__header">
+                <i class='bx bx-plus accordion__icon'></i>
+                <h3 class="accordion__title">How is my loan eligibility calculated?</h3>
+            </header>
+
+            <div class="accordion__content">
+                <p class="accordion__description">
+                    Loan eligibility is dependent on primarily the following factors-The company where you work,Your gross/net salary,Your credit score as reflected in your CIBIL or Equifax report.
+                </p>
+            </div>
+        </div>
+
+        <div class="accordion__item">
+            <header class="accordion__header">
+                <i class='bx bx-plus accordion__icon'></i>
+                <h3 class="accordion__title">How is rate of interest determined for my personal loan?</h3>
+            </header>
+
+            <div class="accordion__content">
+                <p class="accordion__description">
+                    The dependent factors are-Loan amount disbursed,Salary of the customer,Tenure of the loan.
+                </p>
+            </div>
+        </div>
+
+        <div class="accordion__item">
+            <header class="accordion__header">
+                <i class='bx bx-plus accordion__icon'></i>
+                <h3 class="accordion__title">What can be my loan duration option?</h3>
+            </header>
+
+            <div class="accordion__content">
+                <p class="accordion__description">
+                    Again depending upon your income and experience the duration would be decided which ranges from 12 to 60 months.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    /*========== Colors ==========*/
+    --hue-color: 225;
+    --first-color: hsl(var(--hue-color), 48%, 35%);
+    --title-color: hsl(var(--hue-color), 48%, 22%);
+    --text-color: hsl(var(--hue-color), 12%, 35%);
+    --body-color: hsl(var(--hue-color), 49%, 98%);
+    --container-color: #FFF;
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+}
+
+@media screen and (min-width: 968px) {
+    :root {
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+/*=============== LAYOUT ===============*/
+.container {
+    /* max-width: 968px; */
+    margin-left: 0rem;
+    margin-right: 1rem;
+}
+
+/*=============== ACCORDION ===============*/
+.accordion {
+    display: grid;
+    align-content: center;
+    height: 100vh;
+}
+
+.accordion__container {
+    display: grid;
+    row-gap: .75rem;
+    padding: 2rem 1rem;
+    background-color: var(--container-color);
+    border-radius: .5rem;
+    box-shadow: 0 12px 32px rgba(51, 51, 51, 0.1);
+}
+
+.accordion__title {
+    font-size: var(--small-font-size);
+    color: var(--title-color);
+    font-weight: 400;
+    margin-top: .15rem;
+    transition: .2s;
+}
+
+.accordion__header {
+    display: flex;
+    column-gap: .5rem;
+    padding: 1.25rem 1.25rem 1.25rem 1rem;
+    cursor: pointer;
+}
+
+.accordion__description {
+    padding: 0 1.25rem 1.25rem 3rem;
+    font-size: var(--smaller-font-size);
+}
+
+.accordion__icon {
+    font-size: 1.5rem;
+    height: max-content;
+    color: var(--title-color);
+    transition: .3s;
+}
+
+.accordion__item {
+    box-shadow: 0 2px 6px rgba(38, 38, 38, 0.1);
+    background-color: var(--container-color);
+    border-radius: .25rem;
+    position: relative;
+    transition: all .25s ease;
+}
+
+.accordion__item::after {
+    content: '';
+    background-color: var(--first-color);
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: .25rem 0 0 .25rem;
+}
+
+.accordion__item:nth-child(1) {
+    background-color: #fff7f0;
+}
+
+.accordion__item:nth-child(1)::after {
+    background-color: #ffc08a;
+}
+
+.accordion__item:nth-child(2) {
+    background-color: #f0f0ff;
+}
+
+.accordion__item:nth-child(2)::after {
+    background-color: #8a8aff;
+}
+
+.accordion__item:nth-child(3) {
+    background-color: #fff0f3;
+}
+
+.accordion__item:nth-child(3)::after {
+    background-color: #ff8aa1;
+}
+
+.accordion__item:nth-child(4) {
+    background-color: #f0faff;
+}
+
+.accordion__item:nth-child(4)::after {
+    background-color: #8ad8ff;
+}
+
+.accordion__content {
+    overflow: hidden;
+    height: 0;
+    transition: all .25s ease;
+}
+
+/*Rotate icon and add font weight to titles*/
+.accordion-open .accordion__icon {
+    transform: rotate(45deg);
+}
+
+.accordion-open .accordion__title {
+    font-weight: 600;
+}
+
+/*=============== MEDIA QUERIES ===============*/
+/* For medium devices */
+@media (max-width : 575){
+    .container{
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        
+    }
+    /* .accordion__container{
+        margin-left: 1rem;
+        margin-right: 0rem;
+    } */
+    /* .accordion__container{
+        line-height: 2;
+    } */
+}
+@media screen and (min-width: 576px) {
+    .accordion__container {
+        width: 550px;
+        padding: 3rem;
+        justify-self: center;
+        border-radius: .75rem;
+    }
+
+    .accordion__header {
+        padding: 1.5rem;
+    }
+
+    .accordion__title {
+        padding-right: 3.5rem;
+    }
+
+    .accordion__description {
+        padding: 0 4rem 1.25rem 3.5rem;
+    }
+}
+
+/* For large devices */
+@media screen and (min-width: 968px) {
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+</style>
+<script>
+    const accordionItems = document.querySelectorAll('.accordion__item')
+
+// 1. Selecionar cada item
+accordionItems.forEach((item) => {
+    const accordionHeader = item.querySelector('.accordion__header')
+
+    // 2. Seleccionar cada click del header
+    accordionHeader.addEventListener('click', () => {
+        // 7. Crear la variable
+        const openItem = document.querySelector('.accordion-open')
+
+        // 5. Llamar a la funcion toggle item
+        toggleItem(item)
+
+        // 8. Validar si existe la clase
+        if (openItem && openItem !== item) {
+            toggleItem(openItem)
+        }
+    })
+})
+
+// 3. Crear una funcion tipo constante
+const toggleItem = (item) => {
+    // 3.1 Crear la variable
+    const accordionContent = item.querySelector('.accordion__content')
+
+    // 6. Si existe otro elemento que contenga la clase accorion-open que remueva su clase
+    if (item.classList.contains('accordion-open')) {
+        accordionContent.removeAttribute('style')
+        item.classList.remove('accordion-open')
+    } else {
+        // 4. Agregar el height maximo del content
+        accordionContent.style.height = accordionContent.scrollHeight + 'px'
+        item.classList.add('accordion-open')
+    }
+}
+</script>
