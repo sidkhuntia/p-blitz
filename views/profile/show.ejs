@@ -8,23 +8,25 @@
 
                 <div class="preview-main-content">
                     <p class="">
-                        Name : Suraj Kumar Kushwaha
+                        Name : <%= profile.name %> 
                     </p>
                     <p class="">
-                        Age : 23 yrs
+                        Age : <%= profile.age %> 
                     </p>
                     <p class="">
-                        Mobile No.: 9305193082
+                        Mobile No.: <%= profile.mobileNumber %> 
                     </p>
                     <p class="">
-                        Gender : Male
+                        Gender : <%= profile.gender %> 
                     </p>
                     <p>
-                        Salary : ₹ 1,00,000
+                        Salary : ₹ <%= profile.monthlySalary %> 
                     </p>
                 </div>
                 <div class="preview-form-btn-box">
-                    <button type="button" id="form-edit">Edit</button>
+                    <a href="/profile/<%= profile.id %>/edit">
+                        <button type="button" id="form-edit">Edit</button>
+                    </a>
                   </div>
 
             </div>

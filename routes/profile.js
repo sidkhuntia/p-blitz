@@ -36,7 +36,7 @@ app.get("/", async (req, res) => {
   });
   // console.log(profile);
   if(profile!==null) {
-    renderNewPage(res,profile);
+    renderPage(res,profile,"show");
   } else {
     renderNewPage(res, new Profile());
   }
@@ -61,19 +61,61 @@ app.post("/", async (req, res) => {
     monthlySalary: req.body.monthlySalary,
     cibilScore: calculateCreditScore(req.body.monthlySalary).creditScore,
   });
-  // console.log(profile);
   try {
     const newProfile = await profile.save();
-    res.redirect("/loanrequest");
+    res.redirect("/profile");
   } catch (error) {
     renderNewPage(res, profile, true);
-    console.log(error)
+    console.log(error);
+  }
+});
+
+app.get("/:id/edit", async (req, res) => {
+  try {
+    const profile = await Profile.findById(req.params.id);
+    // console.log(loan._id.toString());
+    renderPage(res, profile, "edit");
+  } catch {
+    res.redirect("/dashboard");
+  }
+});
+
+app.put("/:id", async (req, res) => {
+  const negotiator = await Profile.findOne({
+    userGoogleID: googleUser.user.id.toString(),
+  });
+  let profile;
+  try {
+  profile = await Profile.findById(req.params.id);
+  (profile.name= req.body.name),
+  (profile.userGoogleID= googleUser.user.id),
+  (profile.mobileNumber= req.body.mobileNumber),
+  (profile.age= req.body.age),
+  (profile.gender= req.body.gender),
+  (profile.bankName= req.body.bankName),
+  (profile.bankBranchName= req.body.bankBranchName),
+  (profile.bankBranchIFSC= req.body.bankBranchIFSC),
+  (profile.bankAccountNumber= req.body.bankAccountNumber),
+  (profile.bankAccountholderName= req.body.bankAccountholderName),
+  (profile.aadharNumber= req.body.aadharNumber),
+  (profile.panCardNumber= req.body.panCardNumber),
+  (profile.CTC= req.body.CTC),
+  (profile.monthlySalary= req.body.monthlySalary),
+  (profile.cibilScore= calculateCreditScore(req.body.monthlySalary).creditScore),  
+  await profile.save();
+  res.redirect("/profile");
+  } catch {
+    if (profile != null) {
+      renderPage(res, negotiateLoans, "edit", true);
+    } else {
+      res.redirect("/dashboard");
+    }
   }
 });
 
 
 async function renderNewPage(res, profile, errors = false) {
-  renderPage(res, profile, "show", errors);
+  renderPage(res, profile, "new", errors);
 }
 
 async function renderPage(res, profile, form, errors = false) {
@@ -92,7 +134,7 @@ async function renderPage(res, profile, form, errors = false) {
     res.render(`profile/${form}`, params);
   } catch {
     if (loan != null) {
-      renderPage(res, loan, "show", true);
+      renderPage(res, loan, "new", true);
     } else {
       res.redirect("/loanrequest");
     }
