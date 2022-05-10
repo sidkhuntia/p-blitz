@@ -21,7 +21,9 @@
                     <div class="btn-container d-flex justify-content-between">
                         <!-- <button  class="button btn-a">ACCEPT</button> -->
                         <%- include("./partials/dualDeleteForm",{url:`/loanrequest/${loan.loanID}`,url2:`/negotiate/${loan.id}`, buttonName: acceptButton}) %>
-                        <%- include("./partials/deleteForm",{url:`/negotiate/${loan.id}`, buttonName: rejectButton}) %>
+                        <form action="/negotiate/<%= loan.id %>?_method=DELETE" method="POST">
+                            <button class="button btn-r" type="submit"><%= rejectButton %> </button>
+                        </form>
                     </div>
                 </div>
             </div> 

@@ -1,5 +1,26 @@
+
+
 <% if(locals.errorMessage!= null){ %> 
-    <div class="err-msg">
-        <%= errorMessage %> 
+   <!-- <button class="error-button">Show Alert</button> -->
+    <div class="error-alert error-hide">
+       <span class="fas fa-exclamation-circle"></span>
+       <span class="msg"><%= errorMessage %> </span>
+       <div class="error-close-btn">
+          <span class="fas fa-times"></span>
+       </div>
     </div>
-<% } %>
+    <% } %>
+
+    <script>
+         $('.error-alert').addClass("error-show");
+         $('.error-alert').removeClass("error-hide");
+         $('.error-alert').addClass("error-showAlert");
+         setTimeout(function(){
+           $('.error-alert').removeClass("error-show");
+           $('.error-alert').addClass("error-hide");
+         },1000);
+       $('.error-close-btn').click(function(){
+         $('.error-alert').removeClass("error-show");
+         $('.error-alert').addClass("error-hide");
+       });
+    </script>
