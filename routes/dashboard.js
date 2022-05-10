@@ -12,7 +12,7 @@ const timeAgo = new TimeAgo("en-US");
 app.get("/", async (req, res) => {
   let searchOptions = {};
   try {
-    const loans = await Loan.find(searchOptions);
+    const loans = await Loan.find(searchOptions).sort({createdAt: 'desc'});
     res.render("dashboard", {
       loans: loans,
       showTime: timeAgo,

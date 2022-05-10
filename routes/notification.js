@@ -10,7 +10,7 @@ app.get("/", async (req, res) => {
   // console.log(googleUser.user);
   let searchOptions = {};
   try {
-    const negotiateLoans = await NegotiateLoan.find(searchOptions);
+    const negotiateLoans = await NegotiateLoan.find(searchOptions).sort({createdAt: 'desc'});
     const profiles = await Profile.find();
     // console.log(negotiateLoans);
     res.render("notification", {
