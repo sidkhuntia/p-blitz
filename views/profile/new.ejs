@@ -1,12 +1,16 @@
-<h3 class="m-b-50 heading-line" style="margin-top: 3rem;">Profile Details <i class="fa-solid fa-user"></i></h3>
- <div class="card-container">
-    
-     <div class="step-row">
-         <div id="progress"></div>
-         <div class="step-col"><small>Step 1</small></div>
-         <div class="step-col"><small>Step 2</small></div>
-         <div class="step-col"><small>Step 3</small></div>
-     </div>
-  <%- include('_form_fields.ejs') %>
+<h3 class="m-b-50 heading-line" style="margin-top: 3rem">
+  Profile Details <i class="fa-solid fa-user"></i>
+</h3>
+<div class="card-container">
+  <div class="step-row">
+    <div id="progress"></div>
+    <div class="step-col"><small>Step 1</small></div>
+    <div class="step-col"><small>Step 2</small></div>
+    <div class="step-col"><small>Step 3</small></div>
   </div>
+  <form action="/profile" method="post">
+    <%- include('_form_fields.ejs') %>
+  </form>
+</div>
+
 <script src="/public/scripts/profilePreview.js"></script>

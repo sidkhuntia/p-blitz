@@ -6,6 +6,7 @@
 @import "loanrequest.css";
 @import "dashboard.css";
 @import "profile.css";
+@import "show.css";
 *,
 *::before,
 *::after {

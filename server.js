@@ -87,7 +87,7 @@ app.use("/notification", isLoggedIn, notificationRouter);
 app.use("/loanrequest",isLoggedIn, isProfileCreated, loanRequestRouter);
 app.use("/profile", isLoggedIn, profileRouter);
 app.use("/contactus", contactUsRouter);
-app.use("/negotiate",isLoggedIn, negotiateRouter);
+app.use("/negotiate",isLoggedIn,isProfileCreated, negotiateRouter);
 
 app.get("/", isLoggedIn, (req, res) => {
   // res.render("index", { user: req.user.displayName });

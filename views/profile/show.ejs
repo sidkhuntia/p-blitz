@@ -1,0 +1,35 @@
+
+        <h3 class="m-b-50 heading-line" style="margin-top: 3rem;">Profile Details <i class="fa-solid fa-user"></i></h3>
+
+        <div class="preview-card-container" id="form1">
+            <div class="preview-profile-form-div">
+                <h3 class="preview-form-card-heading">PERSONAL DETAILS</h3>
+                <img src="<%= googleUser.user.photos[0].value %> " alt="" />
+
+                <div class="preview-main-content">
+                    <p class="">
+                        Name : <%= profile.name %> 
+                    </p>
+                    <p class="">
+                        Age : <%= profile.age %> 
+                    </p>
+                    <p class="">
+                        Mobile No.: <%= profile.mobileNumber %> 
+                    </p>
+                    <p class="">
+                        Gender : <%= profile.gender %> 
+                    </p>
+                    <p>
+                        Salary : ₹ <%= profile.monthlySalary %> 
+                    </p>
+                </div>
+                <div class="preview-form-btn-box">
+                    <a href="/profile/<%= profile.id %>/edit">
+                        <button type="button" id="form-edit">Edit</button>
+                    </a>
+                  </div>
+
+            </div>
+        </div>
+
+    </div>
