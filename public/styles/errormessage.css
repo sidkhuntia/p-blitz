@@ -1,5 +1,5 @@
-/* @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-*{
+ @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+/* *{
   margin: 0;
   padding: 0;
   user-select: none;
@@ -13,8 +13,8 @@ body{
   display: grid;
   place-items: center;
   overflow: hidden;
-} */
-/* .error-button{
+}  */
+.error-button{
   padding: 8px 16px;
   font-size: 25px;
   font-weight: 500;
@@ -25,7 +25,7 @@ body{
   color: white;
   letter-spacing: 1px;
   cursor: pointer;
-} */
+}
 .error-alert{
   background: #ff9b9b;
   padding: 20px 40px;
@@ -60,7 +60,7 @@ body{
     transform: translateX(+10px);
   }
 }
-.error-alert .error-hide{
+.error-alert.error-hide{
   animation: hide_slide 1s ease forwards;
 }
 @keyframes hide_slide {
