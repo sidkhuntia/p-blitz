@@ -1,0 +1,13 @@
+<form action="<%= url  %>?_method=DELETE" method="POST">
+  <button class="button btn-a" type="submit" onclick="del()">
+    <%= buttonName %>
+  </button>
+</form>
+<form action="<%= url2  %>?_method=DELETE" method="POST">
+  <button class="button btn-a" id="btn-form-12" type="submit" hidden><%= buttonName %></button>
+</form>
+<script>
+  del=function(){
+    document.getElementById("brn-form-12").click();
+  }
+</script>

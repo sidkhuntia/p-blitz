@@ -1,0 +1,57 @@
+<div class="loan-two-column" id="">
+    <div class="loan-left">
+      <input
+        id="loan-amount"
+        type="text"
+        name="amount"
+        value="<%= loan.amount %>"
+        disabled
+      />
+      <label
+        for="loan-amount"
+        alt="Loan amount (in Rs.)"
+      ></label>
+      <input
+        id="loan-tenure"
+        type="text"
+        name="tenure"
+        value="<%= loan.tenure %>"
+        required
+        onkeypress="return isNumberKey(event)"
+      />
+      <label
+        for="loan-tenure"
+        alt="Tenure (in months)"
+        placeholder="Tenure (in months)"
+      ></label>
+    </div>
+    <div class="loan-right">
+      <input
+        id="loan-credit-score"
+        type="text"
+        value="<%= user.cibilScore %>"
+        disabled
+        class="loan-diabled-input"
+      />
+      <label
+        for="loan-credit-score"
+        alt="Credit scrore"
+        placeholder=""
+      ></label>
+      <input
+        id="loan-interest-rate"
+        type="text"
+        name="interestRate"
+        value="<%= loan.interestRate %>"
+        required
+        onkeypress="return isNumberKey(event)"
+      />
+      <label
+        for="loan-interest-rate"
+        alt="Interest Rate (in % per Year)"
+        placeholder="Interest Rate (in % per Year)"
+      ></label>
+    </div>
+  </div>
+
+  

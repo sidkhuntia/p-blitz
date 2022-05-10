@@ -17,6 +17,7 @@ app.get("/", async (req, res) => {
       negotiateLoans: negotiateLoans,
       profiles: profiles,
       acceptButton : "Accept",
+      rejectButton : "Reject",
       userGoogleID : googleUser.user.id,
     });
   } catch {
