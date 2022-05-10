@@ -12,18 +12,14 @@
     <% } %>
 
     <script>
-      //  $('button').click(function(){
          $('.error-alert').addClass("error-show");
          $('.error-alert').removeClass("error-hide");
          $('.error-alert').addClass("error-showAlert");
          setTimeout(function(){
            $('.error-alert').removeClass("error-show");
-          //  console.log("fuckagain")
            $('.error-alert').addClass("error-hide");
          },1000);
-      //  });
        $('.error-close-btn').click(function(){
-          // console.log("fuck")
          $('.error-alert').removeClass("error-show");
          $('.error-alert').addClass("error-hide");
        });
