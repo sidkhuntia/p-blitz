@@ -73,7 +73,7 @@ app.post("/", async (req, res) => {
 
 
 async function renderNewPage(res, profile, errors = false) {
-  renderPage(res, profile, "new", errors);
+  renderPage(res, profile, "show", errors);
 }
 
 async function renderPage(res, profile, form, errors = false) {
@@ -92,7 +92,7 @@ async function renderPage(res, profile, form, errors = false) {
     res.render(`profile/${form}`, params);
   } catch {
     if (loan != null) {
-      renderPage(res, loan, "edit", true);
+      renderPage(res, loan, "show", true);
     } else {
       res.redirect("/loanrequest");
     }
