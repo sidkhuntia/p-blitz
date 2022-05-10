@@ -8,6 +8,9 @@
     width: 60vw;
     height: 100vh;
     background-color: black;
+    background-image: url(/public/images/login-page-wallpaper.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 .login-area{
